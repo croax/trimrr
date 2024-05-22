@@ -1,49 +1,30 @@
-import axios from 'axios';
-import cliProgress from 'cli-progress';
-import chalk from 'chalk';
-import logger from '../logger.mjs';
+import { fetchWithRetries, prettyBytes, limit, logger, chalk } from '../utils.mjs';
 import { embyApiKey, embyServerUrl } from '../config.mjs';
-import { fetchWithRetries } from '../utils.mjs';
-import pLimit from 'p-limit';
-import prettyBytes from 'pretty-bytes';
-
-const limit = pLimit(10); // Control concurrency for API requests
+import cliProgress from 'cli-progress';
 
 export async function fetchUsers() {
-    const url = `${embyServerUrl}/Users`;
-    const options = { params: { api_key: embyApiKey } };
-
     try {
-        const response = await fetchWithRetries(url, options);
-        logger.info(`Users fetched: ${response.data.length}`);
+        const response = await fetchWithRetries(`${embyServerUrl}/Users`, { params: { api_key: embyApiKey } });
+        logger.info(`Users fetched: ${chalk.green(response.data.length)}`);
         return response.data;
     } catch (error) {
-        logger.error(`Error fetching users: ${error.message}`);
-        logger.error(`URL: ${url}`);
-        logger.error(`Options: ${JSON.stringify(options)}`);
-        if (error.response) {
-            logger.error(`Status: ${error.response.status}`);
-            logger.error(`Response data: ${JSON.stringify(error.response.data)}`);
-        }
+        logger.error('Error fetching users:', error);
         return [];
     }
 }
 
 export async function fetchAllShows() {
-    const url = `${embyServerUrl}/Items`;
-    const options = {
-        params: {
-            IncludeItemTypes: 'Series',
-            Recursive: true,
-            ParentId: '3', // Specifying Library ID directly
-            api_key: embyApiKey,
-            Fields: 'ProviderIds,Path'
-        }
-    };
-
     try {
-        const response = await fetchWithRetries(url, options);
-        logger.info(`Shows fetched: ${response.data.Items.length}`);
+        const response = await fetchWithRetries(`${embyServerUrl}/Items`, {
+            params: {
+                IncludeItemTypes: 'Series',
+                Recursive: true,
+                ParentId: '3', // Specifying Library ID directly
+                api_key: embyApiKey,
+                Fields: 'ProviderIds,Path'
+            }
+        });
+        logger.info(`Shows fetched: ${chalk.green(response.data.Items.length)}`);
         return response.data.Items;
     } catch (error) {
         logger.error('Error fetching all shows:', error);
@@ -84,7 +65,7 @@ export async function getFolderSize(path) {
         const totalSize = response.data.Items.reduce((acc, item) => acc + (item.Size || 0), 0);
         return prettyBytes(totalSize);
     } catch (error) {
-        logger.error(`Error fetching folder size for path ${path}:`, error);
+        logger.error(`Error fetching folder size for path ${path}: ${error.message}`);
         return 'Unknown';
     }
 }

@@ -1,14 +1,11 @@
 import axios from 'axios';
-import { fetchWithRetries } from '../utils.mjs';
-import logger from '../logger.mjs';
-
-const SONARR_API_KEY = process.env.SONARR_API_KEY;
-const SONARR_SERVER_URL = process.env.SONARR_SERVER_URL;
+import { logger, fetchWithRetries } from '../utils.mjs';
+import { sonarrApiKey, sonarrServerUrl } from '../config.mjs';
 
 export async function findSeriesId(seriesTitle) {
     try {
-        const response = await fetchWithRetries(`${SONARR_SERVER_URL}/api/v3/series`, {
-            params: { apiKey: SONARR_API_KEY }
+        const response = await fetchWithRetries(`${sonarrServerUrl}/api/v3/series`, {
+            params: { apiKey: sonarrApiKey }
         });
 
         const series = response.data.find(s => s.title.toLowerCase() === seriesTitle.toLowerCase());
@@ -28,9 +25,9 @@ export async function findSeriesId(seriesTitle) {
 export async function deleteSeriesFromSonarr(seriesId) {
     try {
         logger.info(`Attempting to delete series with ID ${seriesId} from Sonarr...`);
-        const response = await axios.delete(`${SONARR_SERVER_URL}/api/v3/series/${seriesId}`, {
+        const response = await axios.delete(`${sonarrServerUrl}/api/v3/series/${seriesId}`, {
             params: {
-                apiKey: SONARR_API_KEY,
+                apiKey: sonarrApiKey,
                 deleteFiles: true
             }
         });
@@ -44,4 +41,3 @@ export async function deleteSeriesFromSonarr(seriesId) {
         logger.error(`Error deleting series from Sonarr: ${error.message}`);
     }
 }
-
