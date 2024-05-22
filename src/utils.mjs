@@ -21,18 +21,28 @@ export const logger = winston.createLogger({
 
 export async function fetchWithRetries(url, options, retries = 0) {
     try {
-        return await axios(url, options);
+        const response = await axios(url, options);
+        return response;
     } catch (error) {
-        if (error.response && error.response.status === 429 && retries < maxRetries) {
+        const status = error.response ? error.response.status : 'Network Error';
+        const message = error.message || 'Unknown error occurred';
+        
+        logger.error(`Error fetching URL: ${url}, Status: ${status}, Message: ${message}`);
+
+        if (error.response && status === 429 && retries < maxRetries) {
             const retryAfter = error.response.headers['retry-after']
                 ? parseInt(error.response.headers['retry-after']) * 1000
                 : (retries + 1) * 1000;
-            logger.warn(`Rate limit exceeded for URL: ${url}`);
-            logger.warn(`Response headers: ${JSON.stringify(error.response.headers)}`);
-            logger.warn(`Retrying in ${retryAfter / 1000} seconds...`);
+            logger.warn(`Rate limit exceeded for URL: ${url}. Retrying in ${retryAfter / 1000} seconds...`);
+            await new Promise(resolve => setTimeout(resolve, retryAfter));
+            return fetchWithRetries(url, options, retries + 1);
+        } else if (status >= 500 && retries < maxRetries) {
+            const retryAfter = (retries + 1) * 1000;
+            logger.warn(`Server error for URL: ${url}. Retrying in ${retryAfter / 1000} seconds...`);
             await new Promise(resolve => setTimeout(resolve, retryAfter));
             return fetchWithRetries(url, options, retries + 1);
         } else {
+            logger.error(`Failed to fetch URL: ${url} after ${retries + 1} attempts. Error: ${message}`);
             throw error;
         }
     }
