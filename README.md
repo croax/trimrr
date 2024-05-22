@@ -46,11 +46,6 @@
     RATING_THRESHOLD=6
     ```
 
-4. Ensure the logs directory exists:
-
-    ```sh
-    mkdir -p logs
-    ```
 
 ### Configuration
 
@@ -67,20 +62,57 @@
 
 To run the script, execute the following command:
 
+```sh
 node src/index.mjs
+```
 
-Workflow
-Fetching Users and Shows:
+## Workflow
 
-The script fetches all users and shows from your Emby server.
-Calculating Play Counts:
+1. Fetching Users and Shows:
 
-It checks the play state of each show for each user.
-Fetching Trakt Ratings:
+- The script fetches all users and shows from your Emby server.
 
-For shows with no plays, it fetches their ratings from Trakt.
-Show Deletion:
+2. Calculating Play Counts:
 
-Based on the rating threshold and play state, it prompts whether to delete the shows from Sonarr.
-You can choose to delete all recommended shows at once or decide for each show individually.
+- It checks the play state of each show for each user.
+
+3. Fetching Trakt Ratings:
+
+- For shows with no plays, it fetches their ratings from Trakt.
+
+4. Show Deletion:
+
+- Based on the rating threshold and play state, it prompts whether to delete the shows from Sonarr.
+- You can choose to delete all recommended shows at once or decide for each show individually.
+
+## Logging
+
+- Logs are stored in the logs directory with the filename trimrr.log.
+- The log file includes detailed information about the script's operations, including errors and successful API calls.
+
+## Example Workflow
+
+```sh
+2024-05-22T17:24:47.478Z [INFO] Fetching users...
+2024-05-22T17:24:47.478Z [INFO] Users fetched: 27
+2024-05-22T17:24:47.478Z [INFO] Fetching shows...
+2024-05-22T17:24:47.478Z [INFO] Shows fetched: 846
+2024-05-22T17:24:47.478Z [INFO] Calculating play counts...
+2024-05-22T17:24:47.478Z [INFO] Checking play state for shows...
+2024-05-22T17:24:47.478Z [INFO] Shows with no plays found: 533
+2024-05-22T17:24:47.478Z [INFO] Fetching Trakt ratings for shows with no plays...
+2024-05-22T17:24:47.478Z [INFO] Trakt rating for Show A: 5.42
+2024-05-22T17:24:47.478Z [INFO] Trakt rating for Show B: 6.84
+2024-05-22T17:24:47.478Z [INFO] Shows with rating lower than threshold:
+2024-05-22T17:24:47.478Z [INFO] Show A (Rating: 5.42, Size: 43.2 GB)
+Would you like to delete all recommended shows? (Yes/No/Cancel): n
+Delete "Show A" (Rating: 5.42, Size: 43.2 GB)? (Yes/No/Cancel): y
+2024-05-22T17:24:47.478Z [INFO] Series with ID 527 successfully deleted from Sonarr.
+2024-05-22T17:24:47.478Z [INFO] Process completed.
+Statistics:
+- Total shows detected: 846
+- Shows recommended for deletion: 41
+- Total size of recommended deletions: 1.79 GB
+- Total size of actual deletions: 1.43 GB
+```
 
