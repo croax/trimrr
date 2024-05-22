@@ -6,17 +6,8 @@ import pLimit from 'p-limit';
 import readline from 'readline';
 import chalk from 'chalk';
 import prettyBytes from 'pretty-bytes';
-import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-// Dynamically determine the path to the .env file
-const currentWorkingDir = process.cwd();
-const envPath = resolve(currentWorkingDir.includes('bin') ? currentWorkingDir : `${currentWorkingDir}/bin`, '../.env');
-dotenv.config({ path: envPath });
-
+dotenv.config({ path: '../.env' });
 const { EMBY_API_KEY, EMBY_SERVER_URL, TRAKT_CLIENT_ID, SONARR_API_KEY, SONARR_SERVER_URL } = process.env;
 
 const limit = pLimit(10); // Control concurrency for API requests

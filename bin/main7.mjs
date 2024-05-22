@@ -12,14 +12,13 @@ import { dirname, resolve } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Dynamically determine the path to the .env file
 const currentWorkingDir = process.cwd();
 const envPath = resolve(currentWorkingDir.includes('bin') ? currentWorkingDir : `${currentWorkingDir}/bin`, '../.env');
 dotenv.config({ path: envPath });
 
 const { EMBY_API_KEY, EMBY_SERVER_URL, TRAKT_CLIENT_ID, SONARR_API_KEY, SONARR_SERVER_URL } = process.env;
 
-const limit = pLimit(10); // Control concurrency for API requests
+const limit = pLimit(10);
 const ratingThreshold = parseFloat(process.env.RATING_THRESHOLD) || 6;
 const maxRetries = 3;
 
@@ -29,17 +28,14 @@ const rl = readline.createInterface({
     terminal: true
 });
 
-async function getKeypress() {
-    return new Promise((resolve) => {
-        process.stdin.setRawMode(true);
-        process.stdin.once('data', (data) => {
-            process.stdin.setRawMode(false);
-            resolve(data.toString());
-        });
+const getKeypress = () => new Promise(resolve => {
+    process.stdin.setRawMode(true);
+    process.stdin.once('data', data => {
+        process.stdin.setRawMode(false);
+        resolve(data.toString());
     });
-}
+});
 
-// Setup logging
 const logger = winston.createLogger({
     level: 'debug',
     format: winston.format.combine(
@@ -52,7 +48,7 @@ const logger = winston.createLogger({
     ]
 });
 
-async function fetchWithRetries(url, options, retries = 0) {
+const fetchWithRetries = async (url, options, retries = 0) => {
     try {
         return await axios(url, options);
     } catch (error) {
@@ -69,9 +65,9 @@ async function fetchWithRetries(url, options, retries = 0) {
             throw error;
         }
     }
-}
+};
 
-async function fetchUsers() {
+const fetchUsers = async () => {
     try {
         const response = await fetchWithRetries(`${EMBY_SERVER_URL}/Users`, { params: { api_key: EMBY_API_KEY } });
         logger.info(`Users fetched: ${chalk.green(response.data.length)}`);
@@ -80,15 +76,15 @@ async function fetchUsers() {
         logger.error('Error fetching users:', error);
         return [];
     }
-}
+};
 
-async function fetchAllShows() {
+const fetchAllShows = async () => {
     try {
         const response = await fetchWithRetries(`${EMBY_SERVER_URL}/Items`, {
             params: {
                 IncludeItemTypes: 'Series',
                 Recursive: true,
-                ParentId: '3', // Specifying Library ID directly
+                ParentId: '3',
                 api_key: EMBY_API_KEY,
                 Fields: 'ProviderIds,Path'
             }
@@ -99,29 +95,29 @@ async function fetchAllShows() {
         logger.error('Error fetching all shows:', error);
         return [];
     }
-}
+};
 
-async function fetchEpisodes(showId, userIds) {
+const fetchEpisodes = async (showId, userIds) => {
     try {
         const responses = await Promise.all(
             userIds.map(userId =>
                 fetchWithRetries(`${EMBY_SERVER_URL}/Shows/${showId}/Episodes`, {
                     params: {
                         api_key: EMBY_API_KEY,
-                        userId: userId,
+                        userId,
                         Fields: 'UserData'
                     }
                 })
             )
         );
-        return responses.map(response => response.data.Items).flat();
+        return responses.flatMap(response => response.data.Items);
     } catch (error) {
         logger.error(`Error fetching episodes for show ID ${showId} and user IDs ${userIds}:`, error);
         return [];
     }
-}
+};
 
-async function getFolderSize(path) {
+const getFolderSize = async path => {
     try {
         const response = await fetchWithRetries(`${EMBY_SERVER_URL}/Items`, {
             params: {
@@ -137,9 +133,9 @@ async function getFolderSize(path) {
         logger.error(`Error fetching folder size for path ${path}:`, error);
         return 'Unknown';
     }
-}
+};
 
-async function checkPlayState(shows, users) {
+const checkPlayState = async (shows, users) => {
     logger.info('Checking play state for shows...');
     const userIds = users.map(user => user.Id);
     const showsWithNoPlays = [];
@@ -156,18 +152,10 @@ async function checkPlayState(shows, users) {
     await Promise.all(shows.map(show =>
         limit(async () => {
             const episodes = await fetchEpisodes(show.Id, userIds);
-            let totalEpisodesPlayed = 0;
-
-            episodes.forEach(episode => {
-                if (episode.UserData && episode.UserData.Played) {
-                    totalEpisodesPlayed++;
-                }
-            });
-
+            const totalEpisodesPlayed = episodes.reduce((count, episode) => count + (episode.UserData?.Played ? 1 : 0), 0);
             if (totalEpisodesPlayed === 0) {
                 showsWithNoPlays.push(show);
             }
-
             progressBar.increment();
         })
     ));
@@ -175,9 +163,9 @@ async function checkPlayState(shows, users) {
     progressBar.stop();
     logger.info(`Shows with no plays found: ${chalk.red(showsWithNoPlays.length)}`);
     return showsWithNoPlays;
-}
+};
 
-async function fetchRatingFromTrakt(imdbId, showName) {
+const fetchRatingFromTrakt = async (imdbId, showName) => {
     try {
         const response = await fetchWithRetries(`https://api.trakt.tv/search/imdb/${imdbId}?extended=full`, {
             headers: {
@@ -198,9 +186,9 @@ async function fetchRatingFromTrakt(imdbId, showName) {
         logger.error(`Error fetching rating from Trakt for ${showName}:`, error);
         return null;
     }
-}
+};
 
-async function findSeriesId(seriesTitle) {
+const findSeriesId = async seriesTitle => {
     try {
         const response = await fetchWithRetries(`${SONARR_SERVER_URL}/api/v3/series`, {
             params: { apiKey: SONARR_API_KEY }
@@ -218,9 +206,9 @@ async function findSeriesId(seriesTitle) {
         logger.error(`Error fetching series: ${error.message}`);
         return null;
     }
-}
+};
 
-async function deleteSeriesFromSonarr(seriesId) {
+const deleteSeriesFromSonarr = async seriesId => {
     try {
         logger.info(`Attempting to delete series with ID ${seriesId} from Sonarr...`);
         const response = await axios.delete(`${SONARR_SERVER_URL}/api/v3/series/${seriesId}`, {
@@ -238,24 +226,22 @@ async function deleteSeriesFromSonarr(seriesId) {
     } catch (error) {
         logger.error(`Error deleting series from Sonarr: ${error.message}`);
     }
-}
+};
 
-function formatRating(rating) {
-    return rating < ratingThreshold ? chalk.red(rating) : chalk.green(rating);
-}
+const formatRating = rating => rating < ratingThreshold ? chalk.red(rating) : chalk.green(rating);
 
-function formatSize(sizeString) {
+const formatSize = sizeString => {
     const sizeValue = parseFloat(sizeString);
     if (sizeValue < 10) {
         return chalk.green(sizeString);
     } else if (sizeValue <= 100) {
-        return chalk.rgb(255, 165, 0)(sizeString); // Orange color
+        return chalk.rgb(255, 165, 0)(sizeString);
     } else {
         return chalk.red(sizeString);
     }
-}
+};
 
-async function processShows() {
+const processShows = async () => {
     logger.info('Fetching users...');
     const users = await fetchUsers();
     if (users.length === 0) {
@@ -292,13 +278,13 @@ async function processShows() {
     showsToDelete.forEach(show => logger.info(`${show.name} (Rating: ${formatRating(show.rating)}, Size: ${formatSize(show.size)})`));
 
     let totalDeletedSize = 0;
-    let totalRecommendedSize = showsToDelete.reduce((acc, show) => acc + parseFloat(show.size), 0);
+    const totalRecommendedSize = showsToDelete.reduce((acc, show) => acc + parseFloat(show.size), 0);
 
     if (showsToDelete.length > 0) {
         process.stdout.write('Would you like to delete all recommended shows? (Yes/No/Cancel): ');
         const allResponse = await getKeypress().then(key => key.trim().toLowerCase());
         console.log(allResponse);
-        if (allResponse === 'y') {
+        if (['y', 'yes'].includes(allResponse)) {
             for (const show of showsToDelete) {
                 const seriesId = await findSeriesId(show.name);
                 if (seriesId !== null) {
@@ -306,12 +292,12 @@ async function processShows() {
                     totalDeletedSize += parseFloat(show.size);
                 }
             }
-        } else if (allResponse === 'n') {
+        } else if (['n', 'no'].includes(allResponse)) {
             for (const show of showsToDelete) {
                 process.stdout.write(`Delete "${show.name}" (Rating: ${formatRating(show.rating)}, Size: ${formatSize(show.size)})? (Yes/No/Cancel): `);
                 const response = await getKeypress().then(key => key.trim().toLowerCase());
                 console.log(response);
-                if (response === 'y') {
+                if (['y', 'yes'].includes(response)) {
                     const seriesId = await findSeriesId(show.name);
                     if (seriesId !== null) {
                         await deleteSeriesFromSonarr(seriesId);
@@ -328,7 +314,7 @@ async function processShows() {
 
     logger.info(`Process completed.\nStatistics:\n- Total shows detected: ${shows.length}\n- Shows recommended for deletion: ${showsToDelete.length}\n- Total size of recommended deletions: ${prettyBytes(totalRecommendedSize * 1024 * 1024 * 1024)}\n- Total size of actual deletions: ${prettyBytes(totalDeletedSize * 1024 * 1024 * 1024)}`);
     rl.close();
-}
+};
 
 processShows();
 

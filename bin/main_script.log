@@ -20300,3 +20300,625 @@ Statistics:
 - Shows recommended for deletion: 43
 - Total size of recommended deletions: 1.84 TB
 - Total size of actual deletions: 0 B
+2024-05-22T13:01:31.277Z [INFO] Fetching users...
+2024-05-22T13:01:31.520Z [INFO] Users fetched: [32m27[39m
+2024-05-22T13:01:31.520Z [INFO] Fetching shows...
+2024-05-22T13:01:31.716Z [INFO] Shows fetched: [32m847[39m
+2024-05-22T13:01:31.717Z [INFO] Calculating play counts...
+2024-05-22T13:01:31.717Z [INFO] Checking play state for shows...
+2024-05-22T13:04:54.747Z [INFO] Fetching users...
+2024-05-22T13:04:55.018Z [INFO] Users fetched: [32m27[39m
+2024-05-22T13:04:55.019Z [INFO] Fetching shows...
+2024-05-22T13:04:55.219Z [INFO] Shows fetched: [32m847[39m
+2024-05-22T13:04:55.220Z [INFO] Calculating play counts...
+2024-05-22T13:04:55.220Z [INFO] Checking play state for shows...
+2024-05-22T13:16:01.035Z [INFO] Fetching users...
+2024-05-22T13:16:01.050Z [ERROR] Error fetching users:
+2024-05-22T13:16:01.050Z [INFO] No users found.
+2024-05-22T13:18:07.127Z [INFO] Fetching users...
+2024-05-22T13:18:07.142Z [ERROR] Error fetching users:
+2024-05-22T13:18:07.142Z [INFO] No users found.
+2024-05-22T13:19:16.372Z [INFO] Fetching users...
+2024-05-22T13:19:16.391Z [ERROR] Error fetching users:
+2024-05-22T13:19:16.391Z [INFO] No users found.
+2024-05-22T13:24:56.612Z [INFO] Fetching users...
+2024-05-22T13:24:56.629Z [ERROR] Error fetching users:
+2024-05-22T13:24:56.629Z [INFO] No users found.
+2024-05-22T13:26:44.133Z [INFO] Fetching users...
+2024-05-22T13:26:44.412Z [INFO] Users fetched: [32m27[39m
+2024-05-22T13:26:44.412Z [INFO] Fetching shows...
+2024-05-22T13:26:44.629Z [INFO] Shows fetched: [32m847[39m
+2024-05-22T13:26:44.629Z [INFO] Calculating play counts...
+2024-05-22T13:26:44.629Z [INFO] Checking play state for shows...
+2024-05-22T13:27:52.680Z [INFO] Fetching users...
+2024-05-22T13:27:52.936Z [INFO] Users fetched: [32m27[39m
+2024-05-22T13:27:52.936Z [INFO] Fetching shows...
+2024-05-22T13:27:53.132Z [INFO] Shows fetched: [32m847[39m
+2024-05-22T13:27:53.132Z [INFO] Calculating play counts...
+2024-05-22T13:27:53.132Z [INFO] Checking play state for shows...
+2024-05-22T13:28:22.368Z [INFO] Shows with no plays found: [31m535[39m
+2024-05-22T13:28:22.369Z [INFO] Fetching Trakt ratings for shows with no plays...
+2024-05-22T13:28:22.435Z [INFO] Trakt rating for Blade Runner: Black Lotus: [32m6.42[39m
+2024-05-22T13:28:22.453Z [INFO] Trakt rating for Insecure: [32m8.10[39m
+2024-05-22T13:28:22.471Z [INFO] Trakt rating for On Becoming a God in Central Florida: [32m6.94[39m
+2024-05-22T13:28:22.488Z [INFO] Trakt rating for Peaky Blinders: [32m8.64[39m
+2024-05-22T13:28:22.506Z [INFO] Trakt rating for Yellowjackets: [32m7.62[39m
+2024-05-22T13:28:22.521Z [INFO] Trakt rating for The Righteous Gemstones: [32m7.84[39m
+2024-05-22T13:28:22.538Z [INFO] Trakt rating for Outer Range: [32m7.06[39m
+2024-05-22T13:28:22.554Z [INFO] Trakt rating for Young Rock: [32m7.05[39m
+2024-05-22T13:28:22.571Z [INFO] Trakt rating for Superman & Lois: [32m7.63[39m
+2024-05-22T13:28:22.594Z [INFO] Trakt rating for The Flight Attendant: [32m7.09[39m
+2024-05-22T13:28:22.608Z [INFO] Trakt rating for The Man Who Fell to Earth: [32m7.26[39m
+2024-05-22T13:28:22.622Z [INFO] Trakt rating for Anthony Bourdain: Parts Unknown: [32m8.31[39m
+2024-05-22T13:28:22.638Z [INFO] Trakt rating for Dan Brown's The Lost Symbol: [32m6.48[39m
+2024-05-22T13:28:22.651Z [INFO] Trakt rating for The Girl From Plainville: [32m6.65[39m
+2024-05-22T13:28:22.666Z [INFO] Trakt rating for The Great British Sewing Bee: [32m7.33[39m
+2024-05-22T13:28:22.681Z [INFO] Trakt rating for We Own This City: [32m7.52[39m
+2024-05-22T13:28:22.695Z [INFO] Trakt rating for The Real Housewives of Dallas: [32m6.01[39m
+2024-05-22T13:28:22.712Z [INFO] Trakt rating for Made For Love: [32m6.84[39m
+2024-05-22T13:28:22.724Z [INFO] Trakt rating for Winning Time: The Rise of the Lakers Dynasty: [32m7.90[39m
+2024-05-22T13:28:22.739Z [INFO] Trakt rating for Naked Attraction: [32m6.45[39m
+2024-05-22T13:28:22.756Z [INFO] Trakt rating for Shining Girls: [32m7.44[39m
+2024-05-22T13:28:22.771Z [INFO] Trakt rating for Pachinko: [32m8.15[39m
+2024-05-22T13:28:22.788Z [INFO] Trakt rating for Tear Along the Dotted Line: [32m8.54[39m
+2024-05-22T13:28:22.802Z [INFO] Trakt rating for Jimmy Savile: A British Horror Story: [32m6.73[39m
+2024-05-22T13:28:22.819Z [INFO] Trakt rating for The End of the F***ing World: [32m7.74[39m
+2024-05-22T13:28:22.831Z [INFO] Trakt rating for Heartstopper: [32m8.62[39m
+2024-05-22T13:28:22.852Z [INFO] Trakt rating for Exit (2019): [32m7.90[39m
+2024-05-22T13:28:22.865Z [INFO] Trakt rating for Battlestar Galactica (2003): [32m8.45[39m
+2024-05-22T13:28:22.881Z [INFO] Trakt rating for The Story of Science: Power, Proof and Passion: [32m7.63[39m
+2024-05-22T13:28:22.895Z [INFO] Trakt rating for MacGyver (2016): [32m6.39[39m
+2024-05-22T13:28:22.910Z [INFO] Trakt rating for The Good Doctor: [32m7.93[39m
+2024-05-22T13:28:22.929Z [INFO] Trakt rating for Stanley Tucci: Searching for Italy: [32m8.15[39m
+2024-05-22T13:28:22.943Z [INFO] Trakt rating for NYC Epicenters 9/11-2021½: [32m6.82[39m
+2024-05-22T13:28:22.964Z [INFO] Trakt rating for Keeping Up with the Kardashians: [31m4.37[39m
+2024-05-22T13:28:23.040Z [INFO] Trakt rating for Boy Meets World: [32m8.15[39m
+2024-05-22T13:28:23.059Z [INFO] Trakt rating for Mako: Island of Secrets: [32m7.24[39m
+2024-05-22T13:28:23.072Z [INFO] Trakt rating for How I Met Your Father: [32m6.02[39m
+2024-05-22T13:28:23.086Z [INFO] Trakt rating for The Essex Serpent: [32m6.38[39m
+2024-05-22T13:28:23.104Z [INFO] Trakt rating for I Love That for You: [32m6.72[39m
+2024-05-22T13:28:23.123Z [INFO] Trakt rating for The Offer: [32m8.08[39m
+2024-05-22T13:28:23.136Z [INFO] Trakt rating for The Staircase (2022): [32m7.02[39m
+2024-05-22T13:28:23.150Z [INFO] Trakt rating for Grey's Anatomy: [32m7.98[39m
+2024-05-22T13:28:23.172Z [INFO] Trakt rating for Pam & Tommy: [32m7.03[39m
+2024-05-22T13:28:23.186Z [INFO] Trakt rating for Anatomy of a Scandal: [32m7.07[39m
+2024-05-22T13:28:23.200Z [INFO] Trakt rating for Clark: [32m6.80[39m
+2024-05-22T13:28:23.213Z [INFO] Trakt rating for Life & Beth: [32m6.54[39m
+2024-05-22T13:28:23.227Z [INFO] Trakt rating for Bang Bang Baby: [32m6.80[39m
+2024-05-22T13:28:23.241Z [INFO] Trakt rating for Tiger King: [32m7.04[39m
+2024-05-22T13:28:23.254Z [INFO] Trakt rating for 100 Sleeping Princes & The Kingdom of Dreams: [31m5.79[39m
+2024-05-22T13:28:23.321Z [INFO] Trakt rating for Physical: [32m6.89[39m
+2024-05-22T13:28:23.339Z [INFO] Trakt rating for The Vampire Diaries: [32m7.86[39m
+2024-05-22T13:28:23.360Z [INFO] Trakt rating for Stranger Things: [32m8.52[39m
+2024-05-22T13:28:23.379Z [INFO] Trakt rating for Everything I Know About Love: [32m6.97[39m
+2024-05-22T13:28:23.394Z [INFO] Trakt rating for Anne Rice's Mayfair Witches: [32m6.35[39m
+2024-05-22T13:28:23.407Z [INFO] Trakt rating for Mayor of Kingstown: [32m7.92[39m
+2024-05-22T13:28:23.419Z [INFO] Trakt rating for The Legend of Vox Machina: [32m8.24[39m
+2024-05-22T13:28:23.432Z [INFO] Trakt rating for Your Honor (US): [32m7.72[39m
+2024-05-22T13:28:23.445Z [INFO] Trakt rating for Love Island: [31m5.96[39m
+2024-05-22T13:28:23.557Z [INFO] Trakt rating for InuYasha: [32m7.96[39m
+2024-05-22T13:28:23.575Z [INFO] Trakt rating for Psycho-Pass: [32m8.06[39m
+2024-05-22T13:28:23.589Z [INFO] Trakt rating for So Help Me Todd: [32m7.31[39m
+2024-05-22T13:28:23.608Z [INFO] Trakt rating for The Vow: [32m7.18[39m
+2024-05-22T13:28:23.636Z [INFO] Trakt rating for Somebody Somewhere: [32m7.68[39m
+2024-05-22T13:28:23.652Z [INFO] Trakt rating for The Diplomat: [32m7.77[39m
+2024-05-22T13:28:23.677Z [INFO] Trakt rating for Drag Race Sverige: Untucked!: [32m6.67[39m
+2024-05-22T13:28:23.694Z [INFO] Trakt rating for Rabbit Hole: [32m7.46[39m
+2024-05-22T13:28:23.707Z [INFO] Trakt rating for Ted Lasso: [32m8.65[39m
+2024-05-22T13:28:23.732Z [INFO] Trakt rating for Grease: Rise of the Pink Ladies: [32m6.57[39m
+2024-05-22T13:28:23.751Z [INFO] Trakt rating for Platonic (2023): [32m6.94[39m
+2024-05-22T13:28:23.767Z [INFO] Trakt rating for Prehistoric Planet (2022): [32m8.00[39m
+2024-05-22T13:28:23.783Z [INFO] Trakt rating for A Million Little Things: [32m7.96[39m
+2024-05-22T13:28:23.795Z [INFO] Trakt rating for Love & Death: [32m7.41[39m
+2024-05-22T13:28:23.808Z [INFO] Trakt rating for MacGruber: [32m6.34[39m
+2024-05-22T13:28:23.821Z [INFO] Trakt rating for Citadel: [32m6.52[39m
+2024-05-22T13:28:23.836Z [INFO] Trakt rating for The Marvelous Mrs. Maisel: [32m8.51[39m
+2024-05-22T13:28:23.849Z [INFO] Trakt rating for The Other Two: [32m7.55[39m
+2024-05-22T13:28:23.863Z [INFO] Trakt rating for The Last Thing He Told Me: [32m6.59[39m
+2024-05-22T13:28:23.875Z [INFO] Trakt rating for FUBAR: [32m6.57[39m
+2024-05-22T13:28:23.888Z [INFO] Trakt rating for Twenty Five, Twenty One: [32m8.62[39m
+2024-05-22T13:28:23.899Z [INFO] Trakt rating for SPY x FAMILY: [32m8.47[39m
+2024-05-22T13:28:23.912Z [INFO] Trakt rating for Julia (2022): [32m7.82[39m
+2024-05-22T13:28:23.924Z [INFO] Trakt rating for Poker Face (2023): [32m7.63[39m
+2024-05-22T13:28:23.938Z [INFO] Trakt rating for The Wheel of Time: [32m7.18[39m
+2024-05-22T13:28:23.952Z [INFO] Trakt rating for La Brea: [32m6.36[39m
+2024-05-22T13:28:23.964Z [INFO] Trakt rating for Foundation (2021): [32m7.73[39m
+2024-05-22T13:28:23.976Z [INFO] Trakt rating for Narcos: Mexico: [32m8.00[39m
+2024-05-22T13:28:23.989Z [INFO] Trakt rating for Minx: [32m7.48[39m
+2024-05-22T13:28:24.002Z [INFO] Trakt rating for Billions: [32m8.29[39m
+2024-05-22T13:28:24.015Z [INFO] Trakt rating for Armitage III: [32m6.79[39m
+2024-05-22T13:28:24.027Z [INFO] Trakt rating for The Walking Dead: Dead City: [32m6.89[39m
+2024-05-22T13:28:24.040Z [INFO] Trakt rating for Band of Brothers: [32m9.20[39m
+2024-05-22T13:28:24.052Z [INFO] Trakt rating for Doctor Who (2005): [32m8.72[39m
+2024-05-22T13:28:24.064Z [INFO] Trakt rating for Raised by Wolves (2020): [32m7.28[39m
+2024-05-22T13:28:24.078Z [INFO] Trakt rating for The Bachelorette: [31m5.62[39m
+2024-05-22T13:28:24.148Z [INFO] Trakt rating for Bel-Air: [32m7.09[39m
+2024-05-22T13:28:24.164Z [INFO] Trakt rating for Station Eleven: [32m7.46[39m
+2024-05-22T13:28:24.177Z [INFO] Trakt rating for Tomorrow (2022): [32m8.41[39m
+2024-05-22T13:28:24.190Z [INFO] Trakt rating for Super Pumped: [32m7.17[39m
+2024-05-22T13:28:24.202Z [INFO] Trakt rating for The Magicians: [32m6.00[39m
+2024-05-22T13:28:24.214Z [INFO] Trakt rating for The Afterparty: [32m7.17[39m
+2024-05-22T13:28:24.226Z [INFO] Trakt rating for Taken: Hunting the Sex Traffickers: No rating found
+2024-05-22T13:28:24.240Z [INFO] Trakt rating for Spice Girls: How Girl Power Changed Britain: [32m7.50[39m
+2024-05-22T13:28:24.256Z [INFO] Trakt rating for Under the Banner of Heaven: [32m7.42[39m
+2024-05-22T13:28:24.270Z [INFO] Trakt rating for WeCrashed: [32m7.16[39m
+2024-05-22T13:28:24.282Z [INFO] Trakt rating for Candy: [32m6.97[39m
+2024-05-22T13:28:24.293Z [INFO] Trakt rating for State of Happiness: [32m7.35[39m
+2024-05-22T13:28:24.307Z [INFO] Trakt rating for Louis Theroux's Forbidden America: [32m7.44[39m
+2024-05-22T13:28:24.318Z [INFO] Trakt rating for Hacks (2021): [32m8.10[39m
+2024-05-22T13:28:24.330Z [INFO] Trakt rating for This Is Going to Hurt: [32m8.14[39m
+2024-05-22T13:28:24.344Z [INFO] Trakt rating for Twin Peaks: [32m8.55[39m
+2024-05-22T13:28:24.358Z [INFO] Trakt rating for The Lincoln Lawyer: [32m7.78[39m
+2024-05-22T13:28:24.372Z [INFO] Trakt rating for Bosch: Legacy: [32m8.19[39m
+2024-05-22T13:28:24.384Z [INFO] Trakt rating for The Time Traveler's Wife: [32m7.51[39m
+2024-05-22T13:28:24.396Z [INFO] Trakt rating for The Old Man: [32m7.53[39m
+2024-05-22T13:28:24.410Z [INFO] Trakt rating for That Mitchell and Webb Look: [32m8.20[39m
+2024-05-22T13:28:24.424Z [INFO] Trakt rating for God's Favorite Idiot: [32m6.12[39m
+2024-05-22T13:28:24.437Z [INFO] Trakt rating for Ms. Marvel: [32m6.42[39m
+2024-05-22T13:28:24.454Z [INFO] Trakt rating for Conversations with Friends: [32m6.66[39m
+2024-05-22T13:28:24.466Z [INFO] Trakt rating for Reframed: Marilyn Monroe: [32m7.31[39m
+2024-05-22T13:28:24.480Z [INFO] Trakt rating for Motherland: Fort Salem: [32m7.53[39m
+2024-05-22T13:28:24.492Z [INFO] Trakt rating for Scenes from a Marriage (US): [32m7.60[39m
+2024-05-22T13:28:24.504Z [INFO] Trakt rating for Star Trek: Prodigy: [32m7.32[39m
+2024-05-22T13:28:24.518Z [INFO] Trakt rating for Tim and Eric Awesome Show, Great Job!: [32m8.07[39m
+2024-05-22T13:28:24.533Z [INFO] Trakt rating for Frayed: [32m7.21[39m
+2024-05-22T13:28:24.548Z [INFO] Trakt rating for Man vs. Bee: [32m6.61[39m
+2024-05-22T13:28:24.561Z [INFO] Trakt rating for Night Sky: [32m7.20[39m
+2024-05-22T13:28:24.575Z [INFO] Trakt rating for Only Murders in the Building: No rating found
+2024-05-22T13:28:24.588Z [INFO] Trakt rating for Halt and Catch Fire: [32m8.35[39m
+2024-05-22T13:28:24.600Z [INFO] Trakt rating for Skins: [32m8.20[39m
+2024-05-22T13:28:24.612Z [INFO] Trakt rating for Litvinenko: [32m6.75[39m
+2024-05-22T13:28:24.624Z [INFO] Trakt rating for H2O: Just Add Water: [32m7.52[39m
+2024-05-22T13:28:24.637Z [INFO] Trakt rating for Drag Race Philippines: [32m7.04[39m
+2024-05-22T13:28:24.649Z [INFO] Trakt rating for Drag Race France: [32m7.25[39m
+2024-05-22T13:28:24.663Z [INFO] Trakt rating for The Defiant Ones: [32m8.14[39m
+2024-05-22T13:28:24.663Z [INFO] No IMDB ID found for Bring Back My Girls
+2024-05-22T13:28:24.676Z [INFO] Trakt rating for Stargate SG-1: [32m8.75[39m
+2024-05-22T13:28:24.688Z [INFO] Trakt rating for Lockwood & Co.: [32m7.43[39m
+2024-05-22T13:28:24.703Z [INFO] Trakt rating for Wu-Tang: An American Saga: [32m8.13[39m
+2024-05-22T13:28:24.717Z [INFO] Trakt rating for Devil May Care: [32m6.55[39m
+2024-05-22T13:28:24.743Z [INFO] Trakt rating for Tribes of Europa: [32m6.74[39m
+2024-05-22T13:28:24.921Z [INFO] Trakt rating for The Playlist: [32m7.16[39m
+2024-05-22T13:28:24.940Z [INFO] Trakt rating for The Rig (2023): [32m6.12[39m
+2024-05-22T13:28:24.955Z [INFO] Trakt rating for Bill Russell: Legend: [32m7.72[39m
+2024-05-22T13:28:24.970Z [INFO] Trakt rating for The Witcher: [32m7.92[39m
+2024-05-22T13:28:24.985Z [INFO] Trakt rating for Being Human (US): [32m7.67[39m
+2024-05-22T13:28:24.999Z [INFO] Trakt rating for And Just Like That...: [32m6.00[39m
+2024-05-22T13:28:25.014Z [INFO] Trakt rating for A League of Their Own US Road Trip: [32m6.55[39m
+2024-05-22T13:28:25.027Z [INFO] Trakt rating for American Horror Story: [32m7.95[39m
+2024-05-22T13:28:25.040Z [INFO] Trakt rating for Black Dynamite: [32m7.74[39m
+2024-05-22T13:28:25.053Z [INFO] Trakt rating for American Horror Stories: [32m6.57[39m
+2024-05-22T13:28:25.064Z [INFO] Trakt rating for Can't Get You Out of My Head: [32m8.27[39m
+2024-05-22T13:28:25.076Z [INFO] Trakt rating for Dexter: New Blood: [32m7.66[39m
+2024-05-22T13:28:25.089Z [INFO] Trakt rating for Bosch: [32m8.29[39m
+2024-05-22T13:28:25.101Z [INFO] Trakt rating for Cowboy Bebop (2021): [32m6.54[39m
+2024-05-22T13:28:25.116Z [INFO] Trakt rating for Cowboy Bebop: [32m8.83[39m
+2024-05-22T13:28:25.130Z [INFO] Trakt rating for Deadly Class: [32m7.29[39m
+2024-05-22T13:28:25.146Z [INFO] Trakt rating for American Crime Story: [32m8.03[39m
+2024-05-22T13:28:25.161Z [INFO] Trakt rating for Fresh, Fried & Crispy: [32m6.61[39m
+2024-05-22T13:28:25.174Z [INFO] Trakt rating for Flight of the Conchords: [32m8.35[39m
+2024-05-22T13:28:25.186Z [INFO] Trakt rating for Frozen Planet: [32m8.73[39m
+2024-05-22T13:28:25.198Z [INFO] Trakt rating for Hawkeye (2021): [32m7.34[39m
+2024-05-22T13:28:25.210Z [INFO] Trakt rating for Gomorrah: [32m8.47[39m
+2024-05-22T13:28:25.223Z [INFO] Trakt rating for Hannibal: [32m8.47[39m
+2024-05-22T13:28:25.236Z [INFO] Trakt rating for I May Destroy You: [32m8.03[39m
+2024-05-22T13:28:25.249Z [INFO] Trakt rating for Invasion (2021): [32m6.48[39m
+2024-05-22T13:28:25.262Z [INFO] Trakt rating for Prison Break: [32m8.13[39m
+2024-05-22T13:28:25.278Z [INFO] Trakt rating for Line of Duty: [32m8.48[39m
+2024-05-22T13:28:25.291Z [INFO] Trakt rating for Long Way Down: [32m8.08[39m
+2024-05-22T13:28:25.306Z [INFO] Trakt rating for Long Way Up: [32m7.87[39m
+2024-05-22T13:28:25.323Z [INFO] Trakt rating for Our Planet (2019): [32m8.90[39m
+2024-05-22T13:28:25.333Z [INFO] Trakt rating for Lovecraft Country: [32m7.23[39m
+2024-05-22T13:28:25.346Z [INFO] Trakt rating for Mythic Quest: [32m7.62[39m
+2024-05-22T13:28:25.358Z [INFO] Trakt rating for Louis Theroux: No rating found
+2024-05-22T13:28:25.370Z [INFO] Trakt rating for Mare of Easttown: [32m8.25[39m
+2024-05-22T13:28:25.370Z [INFO] No IMDB ID found for Million Pound Homes
+2024-05-22T13:28:25.381Z [INFO] Trakt rating for My Babysitter's a Vampire: [32m7.31[39m
+2024-05-22T13:28:25.393Z [INFO] Trakt rating for Lost: [32m8.13[39m
+2024-05-22T13:28:25.404Z [INFO] Trakt rating for Nine Perfect Strangers: [32m6.76[39m
+2024-05-22T13:28:25.415Z [INFO] Trakt rating for Nip/Tuck: [32m7.62[39m
+2024-05-22T13:28:25.428Z [INFO] Trakt rating for MacGyver (2016): [32m6.39[39m
+2024-05-22T13:28:25.440Z [INFO] Trakt rating for Reservation Dogs: [32m8.04[39m
+2024-05-22T13:28:25.458Z [INFO] Trakt rating for Solos: [32m6.38[39m
+2024-05-22T13:28:25.471Z [INFO] Trakt rating for Squid Game: [32m7.84[39m
+2024-05-22T13:28:25.486Z [INFO] Trakt rating for Summer Heights High: [32m7.64[39m
+2024-05-22T13:28:25.498Z [INFO] Trakt rating for Taboo (2017): [32m8.09[39m
+2024-05-22T13:28:25.510Z [INFO] Trakt rating for StartUp: [32m7.60[39m
+2024-05-22T13:28:25.523Z [INFO] Trakt rating for Quantum Leap: [32m8.07[39m
+2024-05-22T13:28:25.536Z [INFO] Trakt rating for Sons of Anarchy: [32m8.58[39m
+2024-05-22T13:28:25.547Z [INFO] Trakt rating for The Beatles: Get Back: [32m8.59[39m
+2024-05-22T13:28:25.562Z [INFO] Trakt rating for The Century of the Self: [32m8.45[39m
+2024-05-22T13:28:25.574Z [INFO] Trakt rating for The Crime of the Century: [32m7.68[39m
+2024-05-22T13:28:25.587Z [INFO] Trakt rating for The Comey Rule: [32m7.10[39m
+2024-05-22T13:28:25.598Z [INFO] Trakt rating for The Affair: [32m7.67[39m
+2024-05-22T13:28:25.610Z [INFO] Trakt rating for The Bridge (2011): [32m8.56[39m
+2024-05-22T13:28:25.611Z [INFO] No IMDB ID found for The Future Is Cannabis
+2024-05-22T13:28:25.623Z [INFO] Trakt rating for The Expanse: [32m8.57[39m
+2024-05-22T13:28:25.635Z [INFO] Trakt rating for The Kings (2021): [32m6.88[39m
+2024-05-22T13:28:25.649Z [INFO] Trakt rating for The Mosquito Coast: [32m6.83[39m
+2024-05-22T13:28:25.661Z [INFO] Trakt rating for The Mysterious Benedict Society: [32m7.30[39m
+2024-05-22T13:28:25.674Z [INFO] Trakt rating for The Newsroom (2012): [32m8.50[39m
+2024-05-22T13:28:25.686Z [INFO] Trakt rating for The North Water: [32m7.38[39m
+2024-05-22T13:28:25.698Z [INFO] Trakt rating for The Handmaid's Tale: [32m8.27[39m
+2024-05-22T13:28:25.710Z [INFO] Trakt rating for The Falcon and The Winter Soldier: [32m7.10[39m
+2024-05-22T13:28:25.723Z [INFO] Trakt rating for The Shrink Next Door: [32m6.82[39m
+2024-05-22T13:28:25.736Z [INFO] Trakt rating for The Good Place: [32m8.30[39m
+2024-05-22T13:28:25.751Z [INFO] Trakt rating for The Morning Show: [32m7.78[39m
+2024-05-22T13:28:25.763Z [INFO] Trakt rating for The Undoing: [32m7.27[39m
+2024-05-22T13:28:25.776Z [INFO] Trakt rating for The Sinner: [32m7.72[39m
+2024-05-22T13:28:25.788Z [INFO] Trakt rating for The Walking Dead: [32m7.96[39m
+2024-05-22T13:28:25.800Z [INFO] Trakt rating for The Sopranos: [32m9.13[39m
+2024-05-22T13:28:25.812Z [INFO] Trakt rating for Warrior: [32m8.21[39m
+2024-05-22T13:28:25.824Z [INFO] Trakt rating for The Whitest Kids U'Know: [32m8.16[39m
+2024-05-22T13:28:25.836Z [INFO] Trakt rating for Who Is America?: [32m7.50[39m
+2024-05-22T13:28:25.848Z [INFO] Trakt rating for Why Women Kill: [32m8.19[39m
+2024-05-22T13:28:25.860Z [INFO] Trakt rating for Watch the Sound with Mark Ronson: [32m7.81[39m
+2024-05-22T13:28:25.882Z [INFO] Trakt rating for ZeroZeroZero: [32m7.81[39m
+2024-05-22T13:28:26.886Z [INFO] Trakt rating for Louis Theroux: By Reason of Insanity: [32m7.40[39m
+2024-05-22T13:28:26.913Z [INFO] Trakt rating for Veronica Mars: [32m8.47[39m
+2024-05-22T13:28:26.928Z [INFO] Trakt rating for The Queen's Gambit: [32m8.44[39m
+2024-05-22T13:28:26.942Z [INFO] Trakt rating for What Happened, Brittany Murphy?: [32m6.13[39m
+2024-05-22T13:28:26.956Z [INFO] Trakt rating for Visitors: [31m5.56[39m
+2024-05-22T13:28:27.018Z [INFO] Trakt rating for Pistol: [32m7.08[39m
+2024-05-22T13:28:27.037Z [INFO] Trakt rating for The Deuce: [32m7.85[39m
+2024-05-22T13:28:27.049Z [INFO] Trakt rating for Schulz Saves America: [32m6.66[39m
+2024-05-22T13:28:27.064Z [INFO] Trakt rating for Keep Sweet: Pray and Obey: [32m7.21[39m
+2024-05-22T13:28:27.076Z [INFO] Trakt rating for First Kill: [32m6.66[39m
+2024-05-22T13:28:27.088Z [INFO] Trakt rating for The Pogmentary: Born Ready: [31m3.37[39m
+2024-05-22T13:28:27.151Z [INFO] Trakt rating for The Anarchists: [31m5.79[39m
+2024-05-22T13:28:27.216Z [INFO] Trakt rating for The Big Conn: [32m6.17[39m
+2024-05-22T13:28:27.230Z [INFO] Trakt rating for The Summer I Turned Pretty: [32m7.50[39m
+2024-05-22T13:28:27.244Z [INFO] Trakt rating for RuPaul’s Drag Race UK vs The World: [32m6.10[39m
+2024-05-22T13:28:27.258Z [INFO] Trakt rating for Resident Evil: [31m5.47[39m
+2024-05-22T13:28:27.322Z [INFO] Trakt rating for Black Bird: [32m8.03[39m
+2024-05-22T13:28:27.336Z [INFO] Trakt rating for The Terminal List: [32m7.66[39m
+2024-05-22T13:28:27.349Z [INFO] Trakt rating for The Sandman: [32m7.71[39m
+2024-05-22T13:28:27.362Z [INFO] Trakt rating for Servant: [32m7.43[39m
+2024-05-22T13:28:27.375Z [INFO] Trakt rating for Roswell, New Mexico: [32m7.03[39m
+2024-05-22T13:28:27.386Z [INFO] Trakt rating for Trainwreck: Woodstock '99: [32m7.33[39m
+2024-05-22T13:28:27.398Z [INFO] Trakt rating for She-Hulk: Attorney at Law: [31m5.82[39m
+2024-05-22T13:28:27.461Z [INFO] Trakt rating for Kevin Can F**k Himself: [32m6.93[39m
+2024-05-22T13:28:27.479Z [INFO] Trakt rating for The Serpent Queen: [32m7.66[39m
+2024-05-22T13:28:27.491Z [INFO] Trakt rating for Drag Race Sweden: [31m5.89[39m
+2024-05-22T13:28:27.554Z [INFO] Trakt rating for Shrinking: [32m7.85[39m
+2024-05-22T13:28:27.567Z [INFO] Trakt rating for The Watcher (2022): [32m6.65[39m
+2024-05-22T13:28:27.581Z [INFO] Trakt rating for Gunther's Millions: [31m5.72[39m
+2024-05-22T13:28:27.643Z [INFO] Trakt rating for Murdaugh Murders: A Southern Scandal: [32m6.68[39m
+2024-05-22T13:28:27.657Z [INFO] Trakt rating for Madoff: The Monster of Wall Street: [32m6.93[39m
+2024-05-22T13:28:27.670Z [INFO] Trakt rating for American Gigolo: [32m6.57[39m
+2024-05-22T13:28:27.686Z [INFO] Trakt rating for Heroes: [32m7.50[39m
+2024-05-22T13:28:27.700Z [INFO] Trakt rating for What We Do in the Shadows: [32m8.35[39m
+2024-05-22T13:28:27.712Z [INFO] Trakt rating for The Consultant (2023): [32m6.55[39m
+2024-05-22T13:28:27.725Z [INFO] Trakt rating for Holly Weed: [32m6.00[39m
+2024-05-22T13:28:27.738Z [INFO] Trakt rating for Stan Lee's Superhumans: [32m6.61[39m
+2024-05-22T13:28:27.750Z [INFO] Trakt rating for While the Rest of Us Die: [32m7.38[39m
+2024-05-22T13:28:27.762Z [INFO] Trakt rating for Them: [32m7.56[39m
+2024-05-22T13:28:27.774Z [INFO] Trakt rating for Snowfall (2017): [32m8.44[39m
+2024-05-22T13:28:27.787Z [INFO] Trakt rating for MH370: The Plane That Disappeared: [32m6.23[39m
+2024-05-22T13:28:27.799Z [INFO] Trakt rating for Carnival Row: [32m7.58[39m
+2024-05-22T13:28:27.810Z [INFO] Trakt rating for What If…?: [32m7.34[39m
+2024-05-22T13:28:27.824Z [INFO] Trakt rating for George Carlin's American Dream: [32m7.83[39m
+2024-05-22T13:28:27.836Z [INFO] Trakt rating for I'll Be Gone in the Dark: [32m7.39[39m
+2024-05-22T13:28:27.847Z [INFO] Trakt rating for Phoenix Rising (2022): [32m7.24[39m
+2024-05-22T13:28:27.859Z [INFO] Trakt rating for Ten Year Old Tom: [32m7.50[39m
+2024-05-22T13:28:27.871Z [INFO] Trakt rating for American Gods: [32m7.52[39m
+2024-05-22T13:28:27.887Z [INFO] Trakt rating for UNHhhh: [32m8.80[39m
+2024-05-22T13:28:27.899Z [INFO] Trakt rating for Echoes: [32m6.27[39m
+2024-05-22T13:28:27.911Z [INFO] Trakt rating for Traffickers: Inside The Golden Triangle: [31m5.50[39m
+2024-05-22T13:28:27.973Z [INFO] Trakt rating for Anthony Bourdain: No Reservations: [32m8.50[39m
+2024-05-22T13:28:27.985Z [INFO] Trakt rating for Documentary Now!: [32m7.77[39m
+2024-05-22T13:28:27.998Z [INFO] Trakt rating for Keep Breathing: [31m5.70[39m
+2024-05-22T13:28:28.062Z [INFO] Trakt rating for Paper Girls: [32m7.22[39m
+2024-05-22T13:28:28.081Z [INFO] Trakt rating for The Night Of: [32m8.24[39m
+2024-05-22T13:28:28.099Z [INFO] Trakt rating for Extraordinary Attorney Woo: [32m8.59[39m
+2024-05-22T13:28:28.112Z [INFO] Trakt rating for The Most Hated Man on the Internet: [32m6.68[39m
+2024-05-22T13:28:28.126Z [INFO] Trakt rating for Cyberpunk: Edgerunners: [32m8.28[39m
+2024-05-22T13:28:28.146Z [INFO] Trakt rating for Uncoupled: [32m6.77[39m
+2024-05-22T13:28:28.160Z [INFO] Trakt rating for Nathan for You: [32m8.78[39m
+2024-05-22T13:28:28.175Z [INFO] Trakt rating for Blockbuster: [31m5.22[39m
+2024-05-22T13:28:28.240Z [INFO] Trakt rating for Last Light: [31m5.43[39m
+2024-05-22T13:28:28.309Z [INFO] Trakt rating for The Girl in the Mirror: [32m6.50[39m
+2024-05-22T13:28:28.325Z [INFO] Trakt rating for Selena + Chef: [32m7.92[39m
+2024-05-22T13:28:28.341Z [INFO] Trakt rating for The Way Down: God, Greed, and the Cult of Gwen Shamblin: No rating found
+2024-05-22T13:28:28.354Z [INFO] Trakt rating for Enlightened: [32m7.14[39m
+2024-05-22T13:28:28.367Z [INFO] Trakt rating for A League of Their Own (2022): [32m8.14[39m
+2024-05-22T13:28:28.367Z [INFO] No IMDB ID found for Russia 1985-1999 - TraumaZone
+2024-05-22T13:28:28.381Z [INFO] Trakt rating for History of Swear Words: [32m6.61[39m
+2024-05-22T13:28:28.394Z [INFO] Trakt rating for Daisy Jones and The Six: [32m7.86[39m
+2024-05-22T13:28:28.407Z [INFO] Trakt rating for Swarm: [32m6.88[39m
+2024-05-22T13:28:28.420Z [INFO] Trakt rating for Tulsa King: [32m7.84[39m
+2024-05-22T13:28:28.433Z [INFO] Trakt rating for The Night Agent: [32m7.64[39m
+2024-05-22T13:28:28.445Z [INFO] Trakt rating for Waco: American Apocalypse: [32m6.78[39m
+2024-05-22T13:28:28.457Z [INFO] Trakt rating for BEEF: [32m7.93[39m
+2024-05-22T13:28:28.470Z [INFO] Trakt rating for Am I Being Unreasonable?: [32m7.17[39m
+2024-05-22T13:28:28.484Z [INFO] Trakt rating for Drag Race Belgium: [32m6.30[39m
+2024-05-22T13:28:28.499Z [INFO] Trakt rating for Chainsaw Man: [32m8.24[39m
+2024-05-22T13:28:28.512Z [INFO] Trakt rating for Call the Midwife: [32m8.13[39m
+2024-05-22T13:28:28.525Z [INFO] Trakt rating for The Seven Deadly Sins: Signs of Holy War: No rating found
+2024-05-22T13:28:28.536Z [INFO] Trakt rating for Searching for Soul Food: [31m3.38[39m
+2024-05-22T13:28:28.600Z [INFO] Trakt rating for White House Plumbers: [32m6.50[39m
+2024-05-22T13:28:28.615Z [INFO] Trakt rating for The Peripheral: [32m7.59[39m
+2024-05-22T13:28:28.629Z [INFO] Trakt rating for King the Land: [32m7.64[39m
+2024-05-22T13:28:28.640Z [INFO] Trakt rating for The Last Movie Stars: No rating found
+2024-05-22T13:28:28.653Z [INFO] Trakt rating for Gordita Chronicles: [32m6.06[39m
+2024-05-22T13:28:28.665Z [INFO] Trakt rating for I Am Groot: [32m6.80[39m
+2024-05-22T13:28:28.681Z [INFO] Trakt rating for The Patient: [32m6.95[39m
+2024-05-22T13:28:28.693Z [INFO] Trakt rating for Beforeigners: [32m7.59[39m
+2024-05-22T13:28:28.707Z [INFO] Trakt rating for Philip K. Dick's Electric Dreams: [32m7.22[39m
+2024-05-22T13:28:28.720Z [INFO] Trakt rating for Tuca & Bertie: [32m7.48[39m
+2024-05-22T13:28:28.733Z [INFO] Trakt rating for Masters of Science Fiction: [32m6.72[39m
+2024-05-22T13:28:28.750Z [INFO] Trakt rating for The Mole (2022): [32m7.32[39m
+2024-05-22T13:28:28.763Z [INFO] Trakt rating for Devil in Ohio: [32m6.33[39m
+2024-05-22T13:28:28.776Z [INFO] Trakt rating for Sci-Fi Science: Physics of the Impossible: [32m6.38[39m
+2024-05-22T13:28:28.789Z [INFO] Trakt rating for Fortune Seller: A TV Scam: [32m7.02[39m
+2024-05-22T13:28:28.813Z [INFO] Trakt rating for Kleo: [32m7.36[39m
+2024-05-22T13:28:28.828Z [INFO] Trakt rating for The Real Bling Ring: Hollywood Heist: [31m5.42[39m
+2024-05-22T13:28:28.896Z [INFO] Trakt rating for RuPaul's Secret Celebrity Drag Race: [32m6.13[39m
+2024-05-22T13:28:28.911Z [INFO] Trakt rating for Drag Race Italia: [31m5.40[39m
+2024-05-22T13:28:28.977Z [INFO] Trakt rating for Room 104: [32m6.13[39m
+2024-05-22T13:28:28.997Z [INFO] Trakt rating for Eat the Rich: The GameStop Saga: [32m6.83[39m
+2024-05-22T13:28:29.009Z [INFO] Trakt rating for House of Hammer: [32m6.13[39m
+2024-05-22T13:28:29.022Z [INFO] Trakt rating for Star Wars: Tales of the Jedi: [32m7.84[39m
+2024-05-22T13:28:29.036Z [INFO] Trakt rating for Surviving R. Kelly: [32m7.13[39m
+2024-05-22T13:28:29.053Z [INFO] Trakt rating for DMZ: [31m5.57[39m
+2024-05-22T13:28:29.135Z [INFO] Trakt rating for The BMF Documentary: Blowing Money Fast: [32m7.25[39m
+2024-05-22T13:28:29.151Z [INFO] Trakt rating for Dead Ringers (2023): [32m6.67[39m
+2024-05-22T13:28:29.166Z [INFO] Trakt rating for Guillermo del Toro's Cabinet of Curiosities: [32m6.81[39m
+2024-05-22T13:28:29.178Z [INFO] Trakt rating for Happy Valley: [32m8.31[39m
+2024-05-22T13:28:29.190Z [INFO] Trakt rating for American Manhunt: The Boston Marathon Bombing: [32m7.28[39m
+2024-05-22T13:28:29.204Z [INFO] Trakt rating for Florida Man: [32m6.44[39m
+2024-05-22T13:28:29.216Z [INFO] Trakt rating for Menendez + Menudo: Boys Betrayed: [31m4.30[39m
+2024-05-22T13:28:29.281Z [INFO] Trakt rating for A Brutal Pact: The Murder of Daniella Perez: [32m8.40[39m
+2024-05-22T13:28:29.293Z [INFO] Trakt rating for Fred and Rose West: The Search for the Victims: [31m4.67[39m
+2024-05-22T13:28:29.364Z [INFO] Trakt rating for The Great: [32m7.92[39m
+2024-05-22T13:28:29.378Z [INFO] Trakt rating for Unidentified: Inside America's UFO Investigation: [32m7.08[39m
+2024-05-22T13:28:29.392Z [INFO] Trakt rating for History's Greatest of All Time With Peyton Manning: [31m5.25[39m
+2024-05-22T13:28:29.461Z [INFO] Trakt rating for If I Hadn't Met You: [32m7.63[39m
+2024-05-22T13:28:29.475Z [INFO] Trakt rating for Queen Charlotte: A Bridgerton Story: [32m7.88[39m
+2024-05-22T13:28:29.487Z [INFO] Trakt rating for Welcome to Earth: [32m7.41[39m
+2024-05-22T13:28:29.502Z [INFO] Trakt rating for Stay Close: [32m6.91[39m
+2024-05-22T13:28:29.515Z [INFO] Trakt rating for XO, Kitty: [32m6.88[39m
+2024-05-22T13:28:29.526Z [INFO] Trakt rating for Horizon: [32m8.66[39m
+2024-05-22T13:28:29.539Z [INFO] Trakt rating for It’s a Sin: [32m8.51[39m
+2024-05-22T13:28:29.552Z [INFO] Trakt rating for Inside Man (2022): [32m6.82[39m
+2024-05-22T13:28:29.564Z [INFO] Trakt rating for Anna: [32m6.55[39m
+2024-05-22T13:28:29.576Z [INFO] Trakt rating for The Dropout: [32m7.42[39m
+2024-05-22T13:28:29.588Z [INFO] Trakt rating for The Devil's Hour: [32m7.52[39m
+2024-05-22T13:28:29.601Z [INFO] Trakt rating for Arcane: [32m9.01[39m
+2024-05-22T13:28:29.616Z [INFO] Trakt rating for Midnight Mass: [32m7.64[39m
+2024-05-22T13:28:29.630Z [INFO] Trakt rating for Normal People: [32m8.26[39m
+2024-05-22T13:28:29.642Z [INFO] Trakt rating for Humans: [32m7.77[39m
+2024-05-22T13:28:29.658Z [INFO] Trakt rating for The Profit: [32m8.37[39m
+2024-05-22T13:28:29.671Z [INFO] Trakt rating for I Love You, You Hate Me: [32m6.79[39m
+2024-05-22T13:28:29.683Z [INFO] Trakt rating for Conspiracy (2015): [32m6.00[39m
+2024-05-22T13:28:29.697Z [INFO] Trakt rating for 1899: [32m7.30[39m
+2024-05-22T13:28:29.709Z [INFO] Trakt rating for Wednesday: [32m7.97[39m
+2024-05-22T13:28:29.727Z [INFO] Trakt rating for COBRA (2020): [32m6.76[39m
+2024-05-22T13:28:29.740Z [INFO] Trakt rating for That '90s Show: [32m6.36[39m
+2024-05-22T13:28:29.751Z [INFO] Trakt rating for From Scratch (2022): [32m7.61[39m
+2024-05-22T13:28:29.763Z [INFO] Trakt rating for A Friend of the Family: [32m6.89[39m
+2024-05-22T13:28:29.775Z [INFO] Trakt rating for Key & Peele: [32m7.96[39m
+2024-05-22T13:28:29.788Z [INFO] Trakt rating for The 4400: [32m7.40[39m
+2024-05-22T13:28:29.803Z [INFO] Trakt rating for Criminal Minds: [32m8.24[39m
+2024-05-22T13:28:29.817Z [INFO] Trakt rating for The English Game: [32m7.33[39m
+2024-05-22T13:28:29.829Z [INFO] Trakt rating for Sue Perkins: Perfectly Legal: [32m6.39[39m
+2024-05-22T13:28:29.841Z [INFO] Trakt rating for Fleishman Is in Trouble: [32m7.49[39m
+2024-05-22T13:28:29.856Z [INFO] Trakt rating for Yellowstone: One-Fifty: [32m8.59[39m
+2024-05-22T13:28:29.869Z [INFO] Trakt rating for Canada's Drag Race: Canada vs The World: [31m5.88[39m
+2024-05-22T13:28:29.941Z [INFO] Trakt rating for Undone: [32m8.04[39m
+2024-05-22T13:28:29.960Z [INFO] Trakt rating for Seduced: Inside The NXIVM Cult: [32m7.33[39m
+2024-05-22T13:28:29.973Z [INFO] Trakt rating for Bad Sisters: [32m8.02[39m
+2024-05-22T13:28:29.988Z [INFO] Trakt rating for I Hate Suzie: [32m7.02[39m
+2024-05-22T13:28:30.004Z [INFO] Trakt rating for Midnight at the Pera Palace: [32m7.26[39m
+2024-05-22T13:28:30.024Z [INFO] Trakt rating for MerPeople: [31m5.80[39m
+2024-05-22T13:28:30.087Z [INFO] Trakt rating for Secret Invasion: [31m5.87[39m
+2024-05-22T13:28:30.155Z [INFO] Trakt rating for I'm a Virgo: [32m6.80[39m
+2024-05-22T13:28:30.173Z [INFO] Trakt rating for Rust Valley Restorers: [32m7.53[39m
+2024-05-22T13:28:30.189Z [INFO] Trakt rating for This World Can’t Tear Me Down: [32m7.91[39m
+2024-05-22T13:28:30.202Z [INFO] Trakt rating for Full Circle (2023): [32m6.13[39m
+2024-05-22T13:28:30.223Z [INFO] Trakt rating for The Crowded Room: [32m7.44[39m
+2024-05-22T13:28:30.237Z [INFO] Trakt rating for Hijack: [32m7.54[39m
+2024-05-22T13:28:30.252Z [INFO] Trakt rating for SmartLess: On the Road: [32m7.02[39m
+2024-05-22T13:28:30.267Z [INFO] Trakt rating for Special Ops: Lioness: [32m7.70[39m
+2024-05-22T13:28:30.282Z [INFO] Trakt rating for True Story (2021): [32m7.30[39m
+2024-05-22T13:28:30.293Z [INFO] Trakt rating for The Pacific: [32m8.41[39m
+2024-05-22T13:28:30.308Z [INFO] Trakt rating for Landscapers: [32m6.87[39m
+2024-05-22T13:28:30.320Z [INFO] Trakt rating for Vigil: [32m7.58[39m
+2024-05-22T13:28:30.320Z [INFO] No IMDB ID found for Serial Psyche
+2024-05-22T13:28:30.332Z [INFO] Trakt rating for Big Little Lies: [32m8.25[39m
+2024-05-22T13:28:30.343Z [INFO] Trakt rating for The L.A. Complex: [32m6.85[39m
+2024-05-22T13:28:30.355Z [INFO] Trakt rating for RuPaul: [31m5.62[39m
+2024-05-22T13:28:30.420Z [INFO] Trakt rating for RuPaul's Drag Race: Vegas Revue: [32m6.57[39m
+2024-05-22T13:28:30.437Z [INFO] Trakt rating for Love Life: [32m7.27[39m
+2024-05-22T13:28:30.454Z [INFO] Trakt rating for Black Sails: [32m8.23[39m
+2024-05-22T13:28:30.466Z [INFO] Trakt rating for Toast of London: [32m7.74[39m
+2024-05-22T13:28:30.478Z [INFO] Trakt rating for World's Most Evil Killers: [32m6.88[39m
+2024-05-22T13:28:30.490Z [INFO] Trakt rating for Angelyne: [31m5.81[39m
+2024-05-22T13:28:30.553Z [INFO] Trakt rating for The Deep End (2022): [32m6.55[39m
+2024-05-22T13:28:30.583Z [INFO] Trakt rating for Industry: [32m6.88[39m
+2024-05-22T13:28:30.596Z [INFO] Trakt rating for The World's Most Amazing Vacation Rentals: [32m6.74[39m
+2024-05-22T13:28:30.608Z [INFO] Trakt rating for Utopia: [32m8.45[39m
+2024-05-22T13:28:30.621Z [INFO] Trakt rating for The One (2021): [32m6.45[39m
+2024-05-22T13:28:30.634Z [INFO] Trakt rating for Vikings: Valhalla: [32m7.51[39m
+2024-05-22T13:28:30.645Z [INFO] Trakt rating for Kiss Me First: [32m6.08[39m
+2024-05-22T13:28:30.657Z [INFO] Trakt rating for The Calling: [32m6.56[39m
+2024-05-22T13:28:30.668Z [INFO] Trakt rating for Emily in Paris: [32m7.01[39m
+2024-05-22T13:28:30.681Z [INFO] Trakt rating for Good Omens: [32m8.01[39m
+2024-05-22T13:28:30.697Z [INFO] Trakt rating for How To with John Wilson: [32m8.43[39m
+2024-05-22T13:28:30.708Z [INFO] Trakt rating for Command Z: [31m5.68[39m
+2024-05-22T13:28:30.770Z [INFO] Trakt rating for Twisted Metal: [32m7.30[39m
+2024-05-22T13:28:30.784Z [INFO] Trakt rating for High Desert: [31m5.52[39m
+2024-05-22T13:28:30.849Z [INFO] Trakt rating for See You in My 19th Life: [32m7.64[39m
+2024-05-22T13:28:30.864Z [INFO] Trakt rating for Rewired: [31m5.50[39m
+2024-05-22T13:28:30.928Z [INFO] Trakt rating for Duel: Hamilton vs. Verstappen: No rating found
+2024-05-22T13:28:30.943Z [INFO] Trakt rating for Stargate Universe: [32m8.05[39m
+2024-05-22T13:28:30.957Z [INFO] Trakt rating for The Gilded Age: [32m7.73[39m
+2024-05-22T13:28:30.970Z [INFO] Trakt rating for Jeen-Yuhs: A Kanye Trilogy: [32m7.83[39m
+2024-05-22T13:28:30.982Z [INFO] Trakt rating for Murderville: [32m6.49[39m
+2024-05-22T13:28:30.994Z [INFO] Trakt rating for Upload: [32m7.64[39m
+2024-05-22T13:28:31.010Z [INFO] Trakt rating for The Boys Presents: Diabolical: [32m6.74[39m
+2024-05-22T13:28:31.024Z [INFO] Trakt rating for Soulmates (2020): [32m6.42[39m
+2024-05-22T13:28:31.036Z [INFO] Trakt rating for The Act: [32m7.66[39m
+2024-05-22T13:28:31.049Z [INFO] Trakt rating for The Knick: [32m8.28[39m
+2024-05-22T13:28:31.049Z [INFO] No IMDB ID found for NFL Superbowls Halftime Shows
+2024-05-22T13:28:31.049Z [INFO] No IMDB ID found for NFL Super Bowls
+2024-05-22T13:28:31.065Z [INFO] Trakt rating for The Leftovers: [32m8.20[39m
+2024-05-22T13:28:31.078Z [INFO] Trakt rating for Worst Roommate Ever: [32m6.92[39m
+2024-05-22T13:28:31.091Z [INFO] Trakt rating for Dr. Brain: [32m6.49[39m
+2024-05-22T13:28:31.105Z [INFO] Trakt rating for Masters of Sex: [32m7.71[39m
+2024-05-22T13:28:31.118Z [INFO] Trakt rating for Pieces of Her: [32m6.46[39m
+2024-05-22T13:28:31.130Z [INFO] Trakt rating for Willow: [32m6.27[39m
+2024-05-22T13:28:31.143Z [INFO] Trakt rating for Treason: [32m6.66[39m
+2024-05-22T13:28:31.156Z [INFO] Trakt rating for The Witcher: Blood Origin: [31m5.94[39m
+2024-05-22T13:28:31.218Z [INFO] Trakt rating for Painkiller: [32m7.11[39m
+2024-05-22T13:28:31.233Z [INFO] Trakt rating for Longing For You: [32m6.11[39m
+2024-05-22T13:28:31.247Z [INFO] Trakt rating for The Recruit: [32m7.40[39m
+2024-05-22T13:28:31.259Z [INFO] Trakt rating for History's Greatest Hoaxes: [32m6.56[39m
+2024-05-22T13:28:31.270Z [INFO] Trakt rating for Billion Dollar Wreck: [32m6.08[39m
+2024-05-22T13:28:31.281Z [INFO] Trakt rating for Depp V. Heard: [31m5.89[39m
+2024-05-22T13:28:31.344Z [INFO] Trakt rating for Dear Child: [32m7.24[39m
+2024-05-22T13:28:31.356Z [INFO] Trakt rating for Botched by Nature: [32m7.42[39m
+2024-05-22T13:28:31.370Z [INFO] Trakt rating for Harry & Meghan: [31m5.91[39m
+2024-05-22T13:28:31.434Z [INFO] Trakt rating for Invisible Monsters: Serial Killers in America: [32m6.04[39m
+2024-05-22T13:28:31.456Z [INFO] Trakt rating for License to Kill: [32m6.58[39m
+2024-05-22T13:28:31.471Z [INFO] Trakt rating for Hunted (US): [32m6.61[39m
+2024-05-22T13:28:31.484Z [INFO] Trakt rating for Telemarketers: [32m6.99[39m
+2024-05-22T13:28:31.496Z [INFO] Trakt rating for Savior Complex: [31m5.50[39m
+2024-05-22T13:28:31.577Z [INFO] Trakt rating for ONE PIECE (2023): [32m8.00[39m
+2024-05-22T13:28:31.591Z [INFO] Trakt rating for Mesternes Mester: [32m6.00[39m
+2024-05-22T13:28:31.603Z [INFO] Trakt rating for One Born Every Minute: [31m5.10[39m
+2024-05-22T13:28:31.675Z [INFO] Trakt rating for Justified: City Primeval: [32m7.14[39m
+2024-05-22T13:28:31.692Z [INFO] Trakt rating for The Continental (2023): [32m7.10[39m
+2024-05-22T13:28:31.710Z [INFO] Trakt rating for Beckham: [32m7.76[39m
+2024-05-22T13:28:31.723Z [INFO] Trakt rating for The Lost Flowers of Alice Hart: [32m7.52[39m
+2024-05-22T13:28:31.735Z [INFO] Trakt rating for Adventure Time: Fionna and Cake: [32m8.49[39m
+2024-05-22T13:28:31.746Z [INFO] Trakt rating for Castlevania: Nocturne: [32m7.46[39m
+2024-05-22T13:28:31.760Z [INFO] Trakt rating for Jungle: [31m5.19[39m
+2024-05-22T13:28:31.825Z [INFO] Trakt rating for The Walking Dead: World Beyond: [31m5.53[39m
+2024-05-22T13:28:31.890Z [INFO] Trakt rating for Lessons in Chemistry: [32m8.18[39m
+2024-05-22T13:28:31.905Z [INFO] Trakt rating for Cold Case Files: [32m7.24[39m
+2024-05-22T13:28:31.919Z [INFO] Trakt rating for The Fall of the House of Usher: [32m7.80[39m
+2024-05-22T13:28:31.932Z [INFO] Trakt rating for Cold Case Files: DNA Speaks: [32m6.27[39m
+2024-05-22T13:28:31.944Z [INFO] Trakt rating for PLUTO: [32m7.88[39m
+2024-05-22T13:28:31.957Z [INFO] Trakt rating for Brawn: The Impossible Formula 1 Story: [32m7.92[39m
+2024-05-22T13:28:31.969Z [INFO] Trakt rating for Scott Pilgrim Takes Off: [32m7.79[39m
+2024-05-22T13:28:31.981Z [INFO] Trakt rating for The Curse of Oak Island: [32m7.50[39m
+2024-05-22T13:28:31.993Z [INFO] Trakt rating for Squid Game: The Challenge: [32m6.14[39m
+2024-05-22T13:28:32.005Z [INFO] Trakt rating for Monarch: Legacy of Monsters: [32m7.16[39m
+2024-05-22T13:28:32.019Z [INFO] Trakt rating for The Outsider: [32m7.43[39m
+2024-05-22T13:28:32.032Z [INFO] Trakt rating for Obliterated: [32m6.78[39m
+2024-05-22T13:28:32.046Z [INFO] Trakt rating for Kim vs Kanye: The Divorce: [31m4.38[39m
+2024-05-22T13:28:32.111Z [INFO] Trakt rating for A Nearly Normal Family: [32m6.82[39m
+2024-05-22T13:28:32.127Z [INFO] Trakt rating for Informer: [32m7.28[39m
+2024-05-22T13:28:32.145Z [INFO] Trakt rating for Fellow Travelers: [32m8.09[39m
+2024-05-22T13:28:32.162Z [INFO] Trakt rating for Big Fat Quiz: [32m8.19[39m
+2024-05-22T13:28:32.174Z [INFO] Trakt rating for Percy Jackson and the Olympians: [32m7.15[39m
+2024-05-22T13:28:32.187Z [INFO] Trakt rating for Escaping Twin Flames: [32m6.41[39m
+2024-05-22T13:28:32.203Z [INFO] Trakt rating for ONE PIECE (2023): [32m8.00[39m
+2024-05-22T13:28:32.215Z [INFO] Trakt rating for Homicide Hunter: Lt. Joe Kenda: [32m8.03[39m
+2024-05-22T13:28:32.215Z [INFO] No IMDB ID found for The Summer of Love: How Hippies Changed the World
+2024-05-22T13:28:32.227Z [INFO] Trakt rating for 90 Day Diaries: [31m5.76[39m
+2024-05-22T13:28:32.302Z [INFO] Trakt rating for How the Earth Was Made: [32m7.86[39m
+2024-05-22T13:28:32.327Z [INFO] Trakt rating for How The Earth Works: [32m6.50[39m
+2024-05-22T13:28:32.340Z [INFO] Trakt rating for Jeffrey Epstein: Filthy Rich: [32m7.06[39m
+2024-05-22T13:28:32.354Z [INFO] Trakt rating for Boy Swallows Universe: [32m7.45[39m
+2024-05-22T13:28:32.366Z [INFO] Trakt rating for American Nightmare (2024): [32m7.47[39m
+2024-05-22T13:28:32.379Z [INFO] Trakt rating for Thunder in My Heart: [32m7.00[39m
+2024-05-22T13:28:32.392Z [INFO] Trakt rating for Expats: [32m6.12[39m
+2024-05-22T13:28:32.415Z [INFO] Trakt rating for Mr. & Mrs. Smith (2024): [32m6.88[39m
+2024-05-22T13:28:32.428Z [INFO] Trakt rating for FEUD: [32m8.02[39m
+2024-05-22T13:28:32.442Z [INFO] Trakt rating for The Guest Book: [32m6.89[39m
+2024-05-22T13:28:32.454Z [INFO] Trakt rating for Summer House: [32m7.01[39m
+2024-05-22T13:28:32.466Z [INFO] Trakt rating for Absurd Planet: [31m5.39[39m
+2024-05-22T13:28:32.530Z [INFO] Trakt rating for Life After People: [32m7.34[39m
+2024-05-22T13:28:32.552Z [INFO] Trakt rating for The Traitors (AU): [32m7.61[39m
+2024-05-22T13:28:32.565Z [INFO] Trakt rating for Rock Paper Scissors: No rating found
+2024-05-22T13:28:32.582Z [INFO] Trakt rating for Junji Ito Maniac: Japanese Tales of the Macabre: [32m6.25[39m
+2024-05-22T13:28:32.597Z [INFO] Trakt rating for Killing Eve: [32m8.08[39m
+2024-05-22T13:28:32.610Z [INFO] Trakt rating for One Day (2024): [32m7.80[39m
+2024-05-22T13:28:32.628Z [INFO] Trakt rating for The Vince Staples Show: [32m6.60[39m
+2024-05-22T13:28:32.640Z [INFO] Trakt rating for Raël: The Alien Prophet: [32m6.32[39m
+2024-05-22T13:28:32.652Z [INFO] Trakt rating for The Gentlemen: [32m8.00[39m
+2024-05-22T13:28:32.664Z [INFO] Trakt rating for The Red Queen: [32m7.06[39m
+2024-05-22T13:28:32.676Z [INFO] Trakt rating for Supersex: [32m6.16[39m
+2024-05-22T13:28:32.688Z [INFO] Trakt rating for A Killer Paradox: [32m6.98[39m
+2024-05-22T13:28:32.706Z [INFO] Trakt rating for The Real World: [32m6.53[39m
+2024-05-22T13:28:32.718Z [INFO] Trakt rating for Love Island South Africa: [31m5.40[39m
+2024-05-22T13:28:32.785Z [INFO] Trakt rating for Fool Me Once: [32m6.97[39m
+2024-05-22T13:28:32.800Z [INFO] Trakt rating for Modern Love: [32m7.61[39m
+2024-05-22T13:28:32.818Z [INFO] Trakt rating for RIPLEY: [32m7.74[39m
+2024-05-22T13:28:32.833Z [INFO] Trakt rating for Can I Tell You a Secret?: [32m6.15[39m
+2024-05-22T13:28:32.848Z [INFO] Trakt rating for American Conspiracy: The Octopus Murders: [32m6.37[39m
+2024-05-22T13:28:32.859Z [INFO] Trakt rating for Unlocked: A Jail Experiment: [32m7.11[39m
+2024-05-22T13:28:32.875Z [INFO] Trakt rating for Dead Boy Detectives: [32m7.69[39m
+2024-05-22T13:28:32.892Z [INFO] Trakt rating for Modern Marvels: [32m7.96[39m
+2024-05-22T13:28:32.906Z [INFO] Trakt rating for Gossip (2021): No rating found
+2024-05-22T13:28:32.918Z [INFO] Trakt rating for Photographer: [32m9.17[39m
+2024-05-22T13:28:32.930Z [INFO] Trakt rating for The Red Door: [32m7.50[39m
+2024-05-22T13:28:32.943Z [INFO] Trakt rating for Dark Desire: [32m7.14[39m
+2024-05-22T13:28:32.961Z [INFO] Trakt rating for Scandal (2012): [32m7.96[39m
+2024-05-22T13:28:32.972Z [INFO] Trakt rating for Crime Scene Berlin: Nightlife Killer: [32m6.65[39m
+2024-05-22T13:28:32.985Z [INFO] Trakt rating for Tiny Beautiful Things: [32m6.84[39m
+2024-05-22T13:28:32.998Z [INFO] Trakt rating for Little Fires Everywhere: [32m7.73[39m
+2024-05-22T13:28:33.010Z [INFO] Trakt rating for Tell Me Lies: [32m6.62[39m
+2024-05-22T13:28:33.022Z [INFO] Trakt rating for Toy Boy: [32m6.86[39m
+2024-05-22T13:28:33.034Z [INFO] Trakt rating for Chloe: [32m6.64[39m
+2024-05-22T13:28:33.046Z [INFO] Trakt rating for Bodkin: [32m6.68[39m
+2024-05-22T13:28:33.059Z [INFO] Trakt rating for Glamorous: [32m6.17[39m
+2024-05-22T13:28:33.070Z [INFO] Trakt rating for Tales of the Tardis: [32m6.77[39m
+2024-05-22T13:28:33.084Z [INFO] Trakt rating for Maxton Hall - The World Between Us: [32m7.84[39m
+2024-05-22T13:28:33.099Z [INFO] Trakt rating for Love is Blind: Sweden: [32m7.03[39m
+2024-05-22T13:28:33.113Z [INFO] Trakt rating for Dark: [32m8.62[39m
+2024-05-22T13:28:33.125Z [INFO] Trakt rating for Love Island (US): [31m5.66[39m
+2024-05-22T13:28:33.190Z [INFO] Trakt rating for Revenge (2011): [32m7.79[39m
+2024-05-22T13:28:33.204Z [INFO] Trakt rating for What If…?: [32m7.34[39m
+2024-05-22T13:28:33.216Z [INFO] Trakt rating for Gossip Girl: [32m7.61[39m
+2024-05-22T13:28:33.216Z [INFO] Shows with rating lower than threshold:
+2024-05-22T13:28:33.216Z [INFO] Keeping Up with the Kardashians (Rating: [31m4.37[39m, Size: [38;2;255;165;0m99.4 GB[39m)
+2024-05-22T13:28:33.216Z [INFO] 100 Sleeping Princes & The Kingdom of Dreams (Rating: [31m5.79[39m, Size: [32m8.5 GB[39m)
+2024-05-22T13:28:33.216Z [INFO] Love Island (Rating: [31m5.96[39m, Size: [31m560 GB[39m)
+2024-05-22T13:28:33.216Z [INFO] The Bachelorette (Rating: [31m5.62[39m, Size: [31m330 GB[39m)
+2024-05-22T13:28:33.216Z [INFO] Visitors (Rating: [31m5.56[39m, Size: [38;2;255;165;0m24.2 GB[39m)
+2024-05-22T13:28:33.216Z [INFO] The Pogmentary: Born Ready (Rating: [31m3.37[39m, Size: [32m9.96 GB[39m)
+2024-05-22T13:28:33.216Z [INFO] The Anarchists (Rating: [31m5.79[39m, Size: [38;2;255;165;0m20.5 GB[39m)
+2024-05-22T13:28:33.216Z [INFO] Resident Evil (Rating: [31m5.47[39m, Size: [38;2;255;165;0m23.6 GB[39m)
+2024-05-22T13:28:33.216Z [INFO] She-Hulk: Attorney at Law (Rating: [31m5.82[39m, Size: [38;2;255;165;0m14.3 GB[39m)
+2024-05-22T13:28:33.216Z [INFO] Drag Race Sweden (Rating: [31m5.89[39m, Size: [38;2;255;165;0m14.6 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Gunther's Millions (Rating: [31m5.72[39m, Size: [32m6.06 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Traffickers: Inside The Golden Triangle (Rating: [31m5.50[39m, Size: [32m2.91 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Keep Breathing (Rating: [31m5.70[39m, Size: [32m6.73 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Blockbuster (Rating: [31m5.22[39m, Size: [38;2;255;165;0m14.5 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Last Light (Rating: [31m5.43[39m, Size: [38;2;255;165;0m12.1 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Searching for Soul Food (Rating: [31m3.38[39m, Size: [32m8.24 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] The Real Bling Ring: Hollywood Heist (Rating: [31m5.42[39m, Size: [32m5.54 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Drag Race Italia (Rating: [31m5.40[39m, Size: [38;2;255;165;0m75.5 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] DMZ (Rating: [31m5.57[39m, Size: [38;2;255;165;0m24.5 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Menendez + Menudo: Boys Betrayed (Rating: [31m4.30[39m, Size: [32m2.17 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Fred and Rose West: The Search for the Victims (Rating: [31m4.67[39m, Size: [32m3.07 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] History's Greatest of All Time With Peyton Manning (Rating: [31m5.25[39m, Size: [38;2;255;165;0m14.1 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Canada's Drag Race: Canada vs The World (Rating: [31m5.88[39m, Size: [38;2;255;165;0m15.9 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] MerPeople (Rating: [31m5.80[39m, Size: [32m8.32 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Secret Invasion (Rating: [31m5.87[39m, Size: [38;2;255;165;0m13 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] RuPaul (Rating: [31m5.62[39m, Size: [32m7.4 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Angelyne (Rating: [31m5.81[39m, Size: [38;2;255;165;0m12.1 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Command Z (Rating: [31m5.68[39m, Size: [32m4.07 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] High Desert (Rating: [31m5.52[39m, Size: [38;2;255;165;0m19.5 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Rewired (Rating: [31m5.50[39m, Size: [38;2;255;165;0m18.5 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] The Witcher: Blood Origin (Rating: [31m5.94[39m, Size: [32m9.2 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Depp V. Heard (Rating: [31m5.89[39m, Size: [32m6.04 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Harry & Meghan (Rating: [31m5.91[39m, Size: [38;2;255;165;0m16.6 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Savior Complex (Rating: [31m5.50[39m, Size: [38;2;255;165;0m12.1 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] One Born Every Minute (Rating: [31m5.10[39m, Size: [38;2;255;165;0m21.6 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Jungle (Rating: [31m5.19[39m, Size: [38;2;255;165;0m17.5 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] The Walking Dead: World Beyond (Rating: [31m5.53[39m, Size: [31m108 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Kim vs Kanye: The Divorce (Rating: [31m4.38[39m, Size: [32m6.32 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] 90 Day Diaries (Rating: [31m5.76[39m, Size: [38;2;255;165;0m86.3 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Absurd Planet (Rating: [31m5.39[39m, Size: [38;2;255;165;0m13.7 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Love Island South Africa (Rating: [31m5.40[39m, Size: [38;2;255;165;0m16.2 GB[39m)
+2024-05-22T13:28:33.217Z [INFO] Love Island (US) (Rating: [31m5.66[39m, Size: [38;2;255;165;0m36.7 GB[39m)
+2024-05-22T13:28:41.772Z [INFO] Process completed.
+Statistics:
+- Total shows detected: 847
+- Shows recommended for deletion: 42
+- Total size of recommended deletions: 1.86 TB
+- Total size of actual deletions: 0 B
