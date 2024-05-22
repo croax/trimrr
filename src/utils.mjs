@@ -1,23 +1,11 @@
 import axios from 'axios';
-import winston from 'winston';
 import prettyBytes from 'pretty-bytes';
 import pLimit from 'p-limit';
 import chalk from 'chalk';
+import logger from './logger.mjs';
 
 const maxRetries = 3;
 const limit = pLimit(10);
-
-export const logger = winston.createLogger({
-    level: 'debug',
-    format: winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.printf(info => `${info.timestamp} [${info.level.toUpperCase()}] ${info.message}`)
-    ),
-    transports: [
-        new winston.transports.Console(),
-        new winston.transports.File({ filename: 'main_script.log' })
-    ]
-});
 
 export async function fetchWithRetries(url, options, retries = 0) {
     try {
@@ -80,4 +68,4 @@ export function parseSizeString(sizeString) {
     }
 }
 
-export { prettyBytes, limit, chalk };
+export { prettyBytes, limit, chalk, logger };
