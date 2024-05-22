@@ -115,4 +115,6 @@ Statistics:
 - Total size of recommended deletions: 1.79 GB
 - Total size of actual deletions: 1.43 GB
 ```
+## Notes
 
+This is made with ChatGPT and I have no development experience. Use at your own risk but I use it for my environment and it helps a lot.
