@@ -1,26 +1,27 @@
 import dotenv from 'dotenv';
-import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
+import { resolve } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-// Dynamically determine the path to the .env file
-const currentWorkingDir = process.cwd();
-const envPath = resolve(currentWorkingDir.includes('bin') ? currentWorkingDir : `${currentWorkingDir}/bin`, '../.env');
+// Load environment variables from .env file
+const envPath = resolve(process.cwd(), '.env');
 dotenv.config({ path: envPath });
 
-export const embyApiKey = process.env.EMBY_API_KEY;
-export const embyServerUrl = process.env.EMBY_SERVER_URL;
-export const traktClientId = process.env.TRAKT_CLIENT_ID;
-export const sonarrApiKey = process.env.SONARR_API_KEY;
-export const sonarrServerUrl = process.env.SONARR_SERVER_URL;
-export const ratingThreshold = parseFloat(process.env.RATING_THRESHOLD) || 6;
+const {
+    EMBY_API_KEY,
+    EMBY_SERVER_URL,
+    TRAKT_CLIENT_ID,
+    SONARR_API_KEY,
+    SONARR_SERVER_URL,
+    RATING_THRESHOLD
+} = process.env;
 
-console.log('Loaded environment variables:');
-console.log(`EMBY_API_KEY: ${embyApiKey}`);
-console.log(`EMBY_SERVER_URL: ${embyServerUrl}`);
-console.log(`TRAKT_CLIENT_ID: ${traktClientId}`);
-console.log(`SONARR_API_KEY: ${sonarrApiKey}`);
-console.log(`SONARR_SERVER_URL: ${sonarrServerUrl}`);
-console.log(`RATING_THRESHOLD: ${ratingThreshold}`);
+export const config = {
+    embyApiKey: EMBY_API_KEY,
+    embyServerUrl: EMBY_SERVER_URL,
+    traktClientId: TRAKT_CLIENT_ID,
+    sonarrApiKey: SONARR_API_KEY,
+    sonarrServerUrl: SONARR_SERVER_URL,
+    ratingThreshold: parseFloat(RATING_THRESHOLD) || 6
+};
+
+// Log confirmation message
+console.log('Environment variables loaded.');

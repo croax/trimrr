@@ -1,10 +1,10 @@
 import { fetchWithRetries, prettyBytes, limit, logger, chalk } from '../utils.mjs';
-import { embyApiKey, embyServerUrl } from '../config.mjs';
+import { config } from '../config.mjs';
 import cliProgress from 'cli-progress';
 
 export async function fetchUsers() {
     try {
-        const response = await fetchWithRetries(`${embyServerUrl}/Users`, { params: { api_key: embyApiKey } });
+        const response = await fetchWithRetries(`${config.embyServerUrl}/Users`, { params: { api_key: config.embyApiKey } });
         logger.info(`Users fetched: ${chalk.green(response.data.length)}`);
         return response.data;
     } catch (error) {
@@ -15,12 +15,12 @@ export async function fetchUsers() {
 
 export async function fetchAllShows() {
     try {
-        const response = await fetchWithRetries(`${embyServerUrl}/Items`, {
+        const response = await fetchWithRetries(`${config.embyServerUrl}/Items`, {
             params: {
                 IncludeItemTypes: 'Series',
                 Recursive: true,
                 ParentId: '3', // Specifying Library ID directly
-                api_key: embyApiKey,
+                api_key: config.embyApiKey,
                 Fields: 'ProviderIds,Path'
             }
         });
@@ -36,9 +36,9 @@ export async function fetchEpisodes(showId, userIds) {
     try {
         const responses = await Promise.all(
             userIds.map(userId =>
-                fetchWithRetries(`${embyServerUrl}/Shows/${showId}/Episodes`, {
+                fetchWithRetries(`${config.embyServerUrl}/Shows/${showId}/Episodes`, {
                     params: {
-                        api_key: embyApiKey,
+                        api_key: config.embyApiKey,
                         userId: userId,
                         Fields: 'UserData'
                     }
@@ -47,16 +47,16 @@ export async function fetchEpisodes(showId, userIds) {
         );
         return responses.map(response => response.data.Items).flat();
     } catch (error) {
-        logger.error(`Error fetching episodes for show ID ${showId} and user IDs ${userIds}:`, error);
+        logger.error(`Error fetching episodes for show ID ${showId} and user IDs ${userIds.join(',')}:`, error);
         return [];
     }
 }
 
 export async function getFolderSize(path) {
     try {
-        const response = await fetchWithRetries(`${embyServerUrl}/Items`, {
+        const response = await fetchWithRetries(`${config.embyServerUrl}/Items`, {
             params: {
-                api_key: embyApiKey,
+                api_key: config.embyApiKey,
                 Recursive: true,
                 ParentId: path,
                 Fields: 'Size'

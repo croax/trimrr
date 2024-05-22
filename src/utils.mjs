@@ -1,11 +1,23 @@
 import axios from 'axios';
+import winston from 'winston';
 import prettyBytes from 'pretty-bytes';
 import pLimit from 'p-limit';
 import chalk from 'chalk';
-import logger from './logger.mjs';
 
 const maxRetries = 3;
 const limit = pLimit(10);
+
+export const logger = winston.createLogger({
+    level: 'debug',
+    format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.printf(info => `${info.timestamp} [${info.level.toUpperCase()}] ${info.message}`)
+    ),
+    transports: [
+        new winston.transports.Console(),
+        new winston.transports.File({ filename: 'logs/trimrr.log', options: { flags: 'a' } })
+    ]
+});
 
 export async function fetchWithRetries(url, options, retries = 0) {
     try {
@@ -47,13 +59,12 @@ export async function getKeypress() {
         process.stdin.once('data', (data) => {
             process.stdin.setRawMode(false);
             const input = data.toString().trim();
-            if (input) {
-                process.stdout.write('\n'); // Print a newline only if there is input
-            }
             resolve(input);
         });
     });
 }
+
+
 
 export function parseSizeString(sizeString) {
     const sizeValue = parseFloat(sizeString);
@@ -68,4 +79,4 @@ export function parseSizeString(sizeString) {
     }
 }
 
-export { prettyBytes, limit, chalk, logger };
+export { prettyBytes, limit, chalk };

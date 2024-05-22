@@ -1,8 +1,8 @@
-import { fetchUsers, fetchAllShows, checkPlayState, getFolderSize } from './emby/embyService.mjs';
+import { fetchUsers, fetchAllShows, fetchEpisodes, getFolderSize, checkPlayState } from './emby/embyService.mjs';
 import { fetchRatingFromTrakt } from './trakt/traktService.mjs';
 import { findSeriesId, deleteSeriesFromSonarr } from './sonarr/sonarrService.mjs';
 import { logger, getKeypress, formatRating, formatSize, prettyBytes, parseSizeString } from './utils.mjs';
-import { ratingThreshold } from './config.mjs';
+import { config } from './config.mjs';
 import readline from 'readline';
 
 const rl = readline.createInterface({
@@ -35,7 +35,7 @@ async function processShows() {
         const imdbId = show.ProviderIds?.IMDB || show.ProviderIds?.Imdb;
         if (imdbId) {
             const rating = await fetchRatingFromTrakt(imdbId, show.Name);
-            if (rating && parseFloat(rating) < ratingThreshold) {
+            if (rating && parseFloat(rating) < config.ratingThreshold) {
                 const size = await getFolderSize(show.Id);
                 showsToDelete.push({ name: show.Name, rating, size });
             }
@@ -45,32 +45,33 @@ async function processShows() {
     }
 
     logger.info('Shows with rating lower than threshold:');
-    showsToDelete.forEach(show => logger.info(`${show.name} (Rating: ${formatRating(show.rating, ratingThreshold)}, Size: ${formatSize(show.size)})`));
+    showsToDelete.forEach(show => logger.info(`${show.name} (Rating: ${formatRating(show.rating, config.ratingThreshold)}, Size: ${formatSize(show.size)})`));
 
     let totalDeletedSize = 0;
-    let totalRecommendedSize = showsToDelete.reduce((acc, show) => acc + (show.size !== 'Unknown' ? parseSizeString(show.size) : 0), 0);
+    let totalRecommendedSize = showsToDelete.reduce((acc, show) => acc + parseSizeString(show.size), 0);
 
     if (showsToDelete.length > 0) {
         process.stdout.write('Would you like to delete all recommended shows? (Yes/No/Cancel): ');
-        const allResponse = await getKeypress();
+        const allResponse = await getKeypress().then(key => key.trim().toLowerCase());
         console.log(allResponse);
         if (allResponse === 'y') {
             for (const show of showsToDelete) {
                 const seriesId = await findSeriesId(show.name);
                 if (seriesId !== null) {
                     await deleteSeriesFromSonarr(seriesId);
-                    totalDeletedSize += (show.size !== 'Unknown' ? parseSizeString(show.size) : 0);
+                    totalDeletedSize += parseSizeString(show.size);
                 }
             }
         } else if (allResponse === 'n') {
             for (const show of showsToDelete) {
-                process.stdout.write(`Delete "${show.name}" (Rating: ${formatRating(show.rating, ratingThreshold)}, Size: ${formatSize(show.size)})? (Yes/No/Cancel): `);
-                const response = await getKeypress();
+                process.stdout.write(`Delete "${show.name}" (Rating: ${formatRating(show.rating, config.ratingThreshold)}, Size: ${formatSize(show.size)})? (Yes/No/Cancel): `);
+                const response = await getKeypress().then(key => key.trim().toLowerCase());
+                console.log(response);
                 if (response === 'y') {
                     const seriesId = await findSeriesId(show.name);
                     if (seriesId !== null) {
                         await deleteSeriesFromSonarr(seriesId);
-                        totalDeletedSize += (show.size !== 'Unknown' ? parseSizeString(show.size) : 0);
+                        totalDeletedSize += parseSizeString(show.size);
                     }
                 } else if (response === 'c') {
                     break;

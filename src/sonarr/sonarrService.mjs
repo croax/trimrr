@@ -1,11 +1,11 @@
+import { fetchWithRetries, logger } from '../utils.mjs';
+import { config } from '../config.mjs';
 import axios from 'axios';
-import { logger, fetchWithRetries } from '../utils.mjs';
-import { sonarrApiKey, sonarrServerUrl } from '../config.mjs';
 
 export async function findSeriesId(seriesTitle) {
     try {
-        const response = await fetchWithRetries(`${sonarrServerUrl}/api/v3/series`, {
-            params: { apiKey: sonarrApiKey }
+        const response = await fetchWithRetries(`${config.sonarrServerUrl}/api/v3/series`, {
+            params: { apiKey: config.sonarrApiKey }
         });
 
         const series = response.data.find(s => s.title.toLowerCase() === seriesTitle.toLowerCase());
@@ -25,9 +25,9 @@ export async function findSeriesId(seriesTitle) {
 export async function deleteSeriesFromSonarr(seriesId) {
     try {
         logger.info(`Attempting to delete series with ID ${seriesId} from Sonarr...`);
-        const response = await axios.delete(`${sonarrServerUrl}/api/v3/series/${seriesId}`, {
+        const response = await axios.delete(`${config.sonarrServerUrl}/api/v3/series/${seriesId}`, {
             params: {
-                apiKey: sonarrApiKey,
+                apiKey: config.sonarrApiKey,
                 deleteFiles: true
             }
         });
