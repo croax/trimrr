@@ -2,7 +2,7 @@
 
 ## Overview
 
-**trimrr** is a script designed to manage and clean up TV shows from your Emby server based on their watch status and ratings from Trakt. It integrates with Sonarr for deletion of shows, allowing you to maintain a clean and efficient media library. The script is modular, making it easy to extend support for additional services like Plex and Radarr in the future.
+**trimrr** is a script designed to manage and clean up TV shows from your Emby server based on their watch status and ratings from Trakt. It integrates with Sonarr for deletion of shows, allowing you to maintain a clean and efficient media library. 
 
 ## Features
 
