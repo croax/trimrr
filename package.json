@@ -1,12 +1,14 @@
 {
   "name": "trimrr",
   "version": "1.0.0",
-  "description": "Tool to trim your Emby library",
+  "description": "Audit and cleanup toolkit for self-hosted media libraries",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "audit": "node src/audit.mjs",
+    "check": "node --check src/audit.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
