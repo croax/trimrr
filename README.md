@@ -1,15 +1,30 @@
 # trimrr
 
-`trimrr` is a local audit and cleanup toolkit for self-hosted media libraries. It builds review reports from Plex, Emby, Sonarr, Radarr, Tautulli, and filesystem data, then records explicit approval artifacts before any monitoring or deletion changes happen.
+`trimrr` helps you find media that is probably safe to remove from one self-hosted library because it already exists somewhere else.
 
-The workflow is intentionally conservative:
+It compares Plex and Emby inventories across one or more media servers, reports overlapping movies and TV seasons, then lets you filter the results by size, title patterns, watch history, ratings, audience data, and remote availability. The goal is to turn "I think these libraries overlap" into a reviewable set of cleanup candidates with enough context to make deliberate decisions.
 
-- generate read-only reports first
-- record cleanup approvals in JSON, CSV, and Markdown
-- unmonitor approved media in Sonarr or Radarr
-- create a filesystem delete dry-run
-- delete only paths from the approved dry-run
-- generate post-apply verification reports
+The tool does not treat overlap as automatic permission to delete. It builds Markdown, CSV, and JSON reports first, records explicit approvals, maps approved items back to Sonarr or Radarr, creates dry-run delete plans, and only then applies monitoring or filesystem changes from those approved artifacts.
+
+Use it when you want to answer questions like:
+
+- Which movies or shows exist on both my main and backup media servers?
+- Which large local items also exist remotely and have little or no recent watch activity?
+- Which TV seasons are local-only versus already covered by another server?
+- How much space could I reclaim if I remove only approved, already-unmonitored items?
+- What exact files, app records, and report artifacts prove what changed?
+
+## How It Works
+
+`trimrr` is designed as a conservative review pipeline:
+
+1. Export media inventories from Plex or Emby servers.
+2. Compare inventories pairwise to find overlapping movies and TV seasons.
+3. Generate filtered cleanup reports using overlap, size, watch, rating, audience, and title-scope context.
+4. Record approval decisions in durable JSON, CSV, and Markdown artifacts.
+5. Build Sonarr or Radarr plans from those approvals.
+6. Apply monitoring changes before deleting files.
+7. Generate filesystem delete dry-runs and post-apply verification reports.
 
 ## Setup
 
