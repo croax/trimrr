@@ -29,10 +29,7 @@ Suggested exclude-regex shape:
 
 ## Configuration
 
-There are two configuration styles:
-
-- The audit workflow uses explicit flags such as `--ssh`, `--url`, `--token`, `--root`, and `--out-dir`.
-- The legacy `node src/index.mjs` Emby/Sonarr workflow loads `.env` from the repository root.
+The audit workflow uses explicit flags such as `--ssh`, `--url`, `--token`, `--root`, and `--out-dir`. `.env` is optional and exists only as a local shell-helper file for repeatable multi-server commands.
 
 Build `.env` by copying `.env.example` and replacing every placeholder:
 
@@ -40,16 +37,24 @@ Build `.env` by copying `.env.example` and replacing every placeholder:
 cp .env.example .env
 ```
 
-Required values:
+`.env.example` includes multi-server helper variables for repeatable export commands:
 
-| Variable | Used By | Description |
+| Variable Pattern | Used By | Description |
 | --- | --- | --- |
-| `EMBY_SERVER_URL` | `src/index.mjs` | Base URL for the Emby server, for example `http://emby.example.local:8096`. |
-| `EMBY_API_KEY` | `src/index.mjs` | Emby API key. |
-| `SONARR_SERVER_URL` | `src/index.mjs` | Base URL for Sonarr, for example `http://sonarr.example.local:8989`. |
-| `SONARR_API_KEY` | `src/index.mjs` | Sonarr API key. |
-| `TRAKT_CLIENT_ID` | `src/index.mjs` | Trakt application client ID for rating lookups. |
-| `RATING_THRESHOLD` | `src/index.mjs` | Optional numeric rating threshold. Defaults to `6`. |
+| `PRIMARY_PLEX_URL`, `PRIMARY_PLEX_TOKEN` | shell examples | Plex server you are reviewing or cleaning. |
+| `SECONDARY_PLEX_URL`, `SECONDARY_PLEX_TOKEN` | shell examples | First Plex comparison target. |
+| `TERTIARY_PLEX_URL`, `TERTIARY_PLEX_TOKEN` | shell examples | Additional Plex comparison target. |
+| `PRIMARY_EMBY_URL`, `PRIMARY_EMBY_API_KEY` | shell examples | Emby server you are reviewing or cleaning. |
+| `SECONDARY_EMBY_URL`, `SECONDARY_EMBY_API_KEY` | shell examples | First Emby comparison target. |
+| `TERTIARY_EMBY_URL`, `TERTIARY_EMBY_API_KEY` | shell examples | Additional Emby comparison target. |
+
+The audit commands do not automatically read those helper names. Source `.env` first if you want to use them in shell commands:
+
+```sh
+set -a
+. ./.env
+set +a
+```
 
 Do not commit `.env`, API tokens, raw exports, or generated reports.
 
@@ -63,8 +68,8 @@ Plex example:
 
 ```sh
 npm run audit -- plex-export \
-  --url http://primary-plex.example.local:32400 \
-  --token primary-plex-token \
+  --url "$PRIMARY_PLEX_URL" \
+  --token "$PRIMARY_PLEX_TOKEN" \
   --server-name primary \
   --types movie,tv \
   --include-media \
@@ -75,8 +80,8 @@ Emby example:
 
 ```sh
 npm run audit -- emby-export \
-  --url http://primary-emby.example.local:8096 \
-  --token primary-emby-api-key \
+  --url "$PRIMARY_EMBY_URL" \
+  --token "$PRIMARY_EMBY_API_KEY" \
   --server-name primary \
   --types movie,tv \
   --out reports/primary-emby.json
@@ -88,14 +93,32 @@ Use `--library NAME` one or more times if you want to limit the export to specif
 
 ```sh
 npm run audit -- plex-export \
-  --url http://secondary-plex.example.local:32400 \
-  --token secondary-plex-token \
+  --url "$SECONDARY_PLEX_URL" \
+  --token "$SECONDARY_PLEX_TOKEN" \
   --server-name secondary \
   --types movie,tv \
   --out reports/secondary-plex.json
 ```
 
 You can compare Plex-to-Plex, Plex-to-Emby, or Emby-to-Emby exports as long as each export was created by `plex-export` or `emby-export`.
+
+For three or more servers, export every server once:
+
+```sh
+npm run audit -- emby-export \
+  --url "$SECONDARY_EMBY_URL" \
+  --token "$SECONDARY_EMBY_API_KEY" \
+  --server-name secondary-emby \
+  --types movie,tv \
+  --out reports/secondary-emby.json
+
+npm run audit -- plex-export \
+  --url "$TERTIARY_PLEX_URL" \
+  --token "$TERTIARY_PLEX_TOKEN" \
+  --server-name tertiary-plex \
+  --types movie,tv \
+  --out reports/tertiary-plex.json
+```
 
 ### 3. Compare Exports
 
@@ -113,6 +136,27 @@ The command writes:
 - `reports/overlap/overlap-candidates.json`
 
 Matching uses available provider IDs first, then normalized title and year. For TV, the report separates full-season overlap from partial-season overlap and shows local-only seasons.
+
+`compare-exports` compares two inventories at a time. For multiple servers, keep the reviewed server as `--local` and run one comparison per target:
+
+```sh
+npm run audit -- compare-exports \
+  --local reports/primary-plex.json \
+  --remote reports/secondary-plex.json \
+  --out-dir reports/overlap-primary-secondary-plex
+
+npm run audit -- compare-exports \
+  --local reports/primary-plex.json \
+  --remote reports/secondary-emby.json \
+  --out-dir reports/overlap-primary-secondary-emby
+
+npm run audit -- compare-exports \
+  --local reports/primary-plex.json \
+  --remote reports/tertiary-plex.json \
+  --out-dir reports/overlap-primary-tertiary-plex
+```
+
+Use one output directory per pair. That keeps the Markdown review, CSV, and JSON artifacts traceable to the exact server pair.
 
 ### 4. Use Overlap As Review Context
 

@@ -27,7 +27,7 @@ npm run check
 
 ## Configuration
 
-Most `npm run audit -- ...` commands take configuration through command-line flags so reports are reproducible. The older `node src/index.mjs` Emby/Sonarr cleanup path loads `.env` from the repository root.
+`npm run audit -- ...` commands take configuration through command-line flags so reports are reproducible. `.env` is optional: use it as a local shell-helper file when you work with several Plex or Emby servers repeatedly.
 
 Create a local `.env` from the example:
 
@@ -35,18 +35,15 @@ Create a local `.env` from the example:
 cp .env.example .env
 ```
 
-Then fill in the values for your own servers:
+Then fill in the values for your own servers. The example includes helper variables such as `PRIMARY_PLEX_URL`, `SECONDARY_PLEX_URL`, and `TERTIARY_EMBY_API_KEY`. Those names are not read automatically by the audit script; they are meant to be sourced into your shell so command examples stay repeatable:
 
-```env
-EMBY_SERVER_URL=http://emby.example.local:8096
-EMBY_API_KEY=replace-with-emby-api-key
-SONARR_SERVER_URL=http://sonarr.example.local:8989
-SONARR_API_KEY=replace-with-sonarr-api-key
-TRAKT_CLIENT_ID=replace-with-trakt-client-id
-RATING_THRESHOLD=6
+```sh
+set -a
+. ./.env
+set +a
 ```
 
-Do not commit `.env`. API keys, Plex tokens, and exported inventory/report data are local operator material.
+Do not commit `.env`. API keys, Plex tokens, private hostnames, and exported inventory/report data are local operator material.
 
 Generated reports are written under `reports/` by convention. That directory is ignored because exports and approval artifacts can contain private library contents, watch history, hostnames, and other environment-specific data.
 
@@ -56,16 +53,16 @@ Compare overlapping media between two servers:
 
 ```sh
 npm run audit -- plex-export \
-  --url http://primary-plex.example.local:32400 \
-  --token primary-plex-token \
+  --url "$PRIMARY_PLEX_URL" \
+  --token "$PRIMARY_PLEX_TOKEN" \
   --server-name primary \
   --types movie,tv \
   --include-media \
   --out reports/primary-plex.json
 
 npm run audit -- emby-export \
-  --url http://secondary-emby.example.local:8096 \
-  --token secondary-emby-api-key \
+  --url "$SECONDARY_EMBY_URL" \
+  --token "$SECONDARY_EMBY_API_KEY" \
   --server-name secondary \
   --types movie,tv \
   --out reports/secondary-emby.json
@@ -77,6 +74,29 @@ npm run audit -- compare-exports \
 ```
 
 `compare-exports` writes `overlap-candidates.md`, `.csv`, and `.json`. The overlap output can be passed into `tv-cleanup-options` or `movie-review` as remote context; it is not approval to delete anything.
+
+For multiple Plex or Emby servers, export each inventory once, then compare pairwise. Put the server you are reviewing as `--local` and each comparison target as `--remote`:
+
+```sh
+npm run audit -- plex-export \
+  --url "$TERTIARY_PLEX_URL" \
+  --token "$TERTIARY_PLEX_TOKEN" \
+  --server-name tertiary \
+  --types movie,tv \
+  --out reports/tertiary-plex.json
+
+npm run audit -- compare-exports \
+  --local reports/primary-plex.json \
+  --remote reports/secondary-emby.json \
+  --out-dir reports/overlap-primary-secondary
+
+npm run audit -- compare-exports \
+  --local reports/primary-plex.json \
+  --remote reports/tertiary-plex.json \
+  --out-dir reports/overlap-primary-tertiary
+```
+
+`compare-exports` is pairwise. If you have three or more comparison targets, keep one output directory per pair so the review trail stays clear.
 
 Generate a TV cleanup options report:
 
