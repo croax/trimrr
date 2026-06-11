@@ -98,6 +98,24 @@ npm run audit -- compare-exports \
 
 `compare-exports` is pairwise. If you have three or more comparison targets, keep one output directory per pair so the review trail stays clear.
 
+Typical command output is a short terminal summary plus Markdown, CSV, and JSON report files:
+
+```text
+Overlap matches: 184
+Markdown: reports/overlap/overlap-candidates.md
+CSV: reports/overlap/overlap-candidates.csv
+JSON: reports/overlap/overlap-candidates.json
+```
+
+The generated Markdown reports start with a summary and then a review table. Example overlap rows look like this:
+
+```md
+| Type | Local | Local Size | Remote | Match | Extra Remote Matches | Overlap Seasons | Local-Only Seasons |
+| --- | --- | ---: | --- | --- | ---: | --- | --- |
+| movie | Example Movie (2021) | 24.5 GiB | Example Movie (2021) | provider-id | 0 |  |  |
+| show | Example Show | 180.2 GiB | Example Show | title-year | 0 | 1, 2 | 3 |
+```
+
 Generate a TV cleanup options report:
 
 ```sh

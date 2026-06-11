@@ -177,6 +177,209 @@ npm run audit -- movie-review \
 
 Remote overlap should reduce uncertainty, not replace local review. Keep the approval and deletion-plan sequence in place.
 
+## Example Outputs
+
+The examples below are representative. Titles, sizes, paths, and counts are placeholders so you can recognize the report shapes without exposing your own library details.
+
+### Inventory Export
+
+Plex and Emby exports write one JSON inventory each:
+
+```text
+Exported 842 Plex items to reports/primary-plex.json
+Exported 615 Emby items to reports/secondary-emby.json
+```
+
+Inventory JSON is intentionally machine-oriented. A single item is shaped like this:
+
+```json
+{
+  "source": "plex",
+  "serverName": "primary",
+  "items": [
+    {
+      "type": "movie",
+      "title": "Example Movie",
+      "year": 2021,
+      "sizeBytes": 26306674688,
+      "providerIds": {
+        "imdb": "tt0000001",
+        "tmdb": "100001"
+      },
+      "library": "Movies",
+      "path": "/media/movies/Example Movie (2021)"
+    }
+  ]
+}
+```
+
+### Overlap Comparison
+
+`compare-exports` prints the number of matched local items and the three report paths:
+
+```text
+Overlap matches: 184
+Markdown: reports/overlap/overlap-candidates.md
+CSV: reports/overlap/overlap-candidates.csv
+JSON: reports/overlap/overlap-candidates.json
+```
+
+The Markdown report starts with summary lines:
+
+```md
+# Media Overlap Report
+
+Generated: 2026-01-01T12:00:00.000Z
+
+Local: primary (plex)
+Remote: secondary (emby)
+
+## Summary
+
+- Local items with remote overlap: 184
+- Local movie size with remote overlap: 4.2 TiB
+- TV full-season overlaps: 37
+- TV partial-season overlaps: 12
+```
+
+The overlap table shows the local item, chosen remote match, matching method, and TV season differences:
+
+```md
+| Type | Local | Local Size | Remote | Match | Extra Remote Matches | Overlap Seasons | Local-Only Seasons |
+| --- | --- | ---: | --- | --- | ---: | --- | --- |
+| movie | Example Movie (2021) | 24.5 GiB | Example Movie (2021) | provider-id | 0 |  |  |
+| show | Example Show | 180.2 GiB | Example Show | title-year | 0 | 1, 2 | 3 |
+```
+
+CSV reports contain the same data in spreadsheet-friendly form:
+
+```csv
+type,local_title,local_year,remote_title,remote_year,match_method,local_library,remote_library,remote_alternatives,local_size_bytes,overlap_seasons,local_only_seasons,remote_only_seasons
+movie,"Example Movie","2021","Example Movie","2021","provider-id","Movies","Movies","0","26306674688","","",""
+show,"Example Show","","Example Show","","title-year","TV","TV","0","193488216883","1 2","3","4"
+```
+
+### TV Cleanup Options
+
+`tv-cleanup-options` summarizes the scan and writes the review files:
+
+```text
+TV shows analyzed: 128
+Focus/reality candidate reclaim: 2.1 TiB
+Other large candidate reclaim: 740.4 GiB
+Markdown: reports/tv-cleanup-options/tv-cleanup-options.md
+CSV: reports/tv-cleanup-options/tv-cleanup-options.csv
+JSON: reports/tv-cleanup-options/tv-cleanup-options.json
+```
+
+The Markdown report separates priority groups and lists candidate seasons:
+
+```md
+# TV Cleanup Options
+
+## Summary
+
+- Shows analyzed: 128
+- Focus/reality candidate reclaim: 2.1 TiB
+- Other large candidate reclaim: 740.4 GiB
+
+| Priority | Show | Candidate Size | Candidate Seasons | Keep Latest | Remote Context |
+| --- | --- | ---: | --- | ---: | --- |
+| focus | Example Reality Show | 340.8 GiB | 1, 2, 3, 4 | 2 | full remote overlap |
+| other-large | Example Drama | 180.2 GiB | 1, 2 | 2 | partial remote overlap; local-only seasons 2 |
+```
+
+### Interactive Approvals
+
+Approval commands prompt one candidate at a time and then summarize the recorded decisions:
+
+```text
+[1/3] Example Reality Show
+  Candidate size: 340.8 GiB | Seasons: 1, 2, 3, 4 | Remote: full remote overlap
+  Audience: 1 unique user | Latest watch: 2023-05-10
+  Decision [a=remove all, o=older only, k=keep, s=skip, q=quit]:
+
+Decisions recorded: 3/3
+Approved for removal: 2
+Approved size: 512.1 GiB
+Kept/exempted: 1
+Skipped: 0
+Markdown: reports/tv-approval/tv-approval.md
+CSV: reports/tv-approval/tv-approval.csv
+JSON: reports/tv-approval/tv-approval.json
+```
+
+Approval JSON is the artifact later planning steps consume:
+
+```json
+{
+  "decisions": [
+    {
+      "decision": "approve",
+      "cleanupMode": "remove-old",
+      "show": "Example Reality Show",
+      "approvedSeasons": [1, 2],
+      "candidateBytes": 366001111040
+    }
+  ]
+}
+```
+
+### Sonarr And Radarr Plans
+
+Planning commands do not delete files. They map approvals to app records and disk paths:
+
+```text
+Candidate season entries: 12
+Needs unmonitor: 12
+Already unmonitored: 0
+Missing Sonarr series: 0
+Missing Sonarr season rows: 0
+Mapped candidate reclaim: 512.1 GiB
+Markdown: reports/sonarr-unmonitor-plan/sonarr-unmonitor-plan.md
+CSV: reports/sonarr-unmonitor-plan/sonarr-unmonitor-plan.csv
+JSON: reports/sonarr-unmonitor-plan/sonarr-unmonitor-plan.json
+```
+
+Expected plan rows look like this:
+
+```md
+| Status | Cleanup Mode | Show | Season | Series ID | Monitored | Path |
+| --- | --- | --- | ---: | ---: | --- | --- |
+| needs-unmonitor | remove-old | Example Reality Show | 1 | 1001 | true | `/path/to/media/tv/Example Reality Show/Season 01` |
+| already-unmonitored | remove-old | Example Reality Show | 2 | 1001 | false | `/path/to/media/tv/Example Reality Show/Season 02` |
+```
+
+### Apply And Delete Reports
+
+Apply commands print outcome counters. For unmonitoring:
+
+```text
+Series updated: 1
+Candidate seasons requested: 12
+Seasons still monitored after apply: 0
+Markdown: reports/sonarr-unmonitor-apply/sonarr-unmonitor-apply.md
+CSV: reports/sonarr-unmonitor-apply/sonarr-unmonitor-apply.csv
+JSON: reports/sonarr-unmonitor-apply/sonarr-unmonitor-apply.json
+```
+
+For filesystem deletion:
+
+```text
+Deleted folders: 12
+Excluded folders: 0
+Missing before delete: 0
+Blocked unsafe paths: 0
+Delete failures: 0
+Deleted bytes: 512.1 GiB
+Deleted files: 428
+Markdown: reports/season-delete-apply/season-delete-apply.md
+CSV: reports/season-delete-apply/season-delete-apply.csv
+JSON: reports/season-delete-apply/season-delete-apply.json
+```
+
+Treat any non-zero blocked, missing, or failure counter as a review point before proceeding.
+
 ## TV Workflow
 
 ### 1. Generate Cleanup Options
