@@ -27,6 +27,112 @@ Suggested exclude-regex shape:
 'Protected Show|Another Protected Show|Do Not Touch'
 ```
 
+## Configuration
+
+There are two configuration styles:
+
+- The audit workflow uses explicit flags such as `--ssh`, `--url`, `--token`, `--root`, and `--out-dir`.
+- The legacy `node src/index.mjs` Emby/Sonarr workflow loads `.env` from the repository root.
+
+Build `.env` by copying `.env.example` and replacing every placeholder:
+
+```sh
+cp .env.example .env
+```
+
+Required values:
+
+| Variable | Used By | Description |
+| --- | --- | --- |
+| `EMBY_SERVER_URL` | `src/index.mjs` | Base URL for the Emby server, for example `http://emby.example.local:8096`. |
+| `EMBY_API_KEY` | `src/index.mjs` | Emby API key. |
+| `SONARR_SERVER_URL` | `src/index.mjs` | Base URL for Sonarr, for example `http://sonarr.example.local:8989`. |
+| `SONARR_API_KEY` | `src/index.mjs` | Sonarr API key. |
+| `TRAKT_CLIENT_ID` | `src/index.mjs` | Trakt application client ID for rating lookups. |
+| `RATING_THRESHOLD` | `src/index.mjs` | Optional numeric rating threshold. Defaults to `6`. |
+
+Do not commit `.env`, API tokens, raw exports, or generated reports.
+
+## Overlap Comparison Workflow
+
+Use overlap comparison when you want to know which movies or shows exist on more than one media server. This is a read-only workflow. It produces context for later review; it does not approve deletion.
+
+### 1. Export The Primary Server
+
+Plex example:
+
+```sh
+npm run audit -- plex-export \
+  --url http://primary-plex.example.local:32400 \
+  --token primary-plex-token \
+  --server-name primary \
+  --types movie,tv \
+  --include-media \
+  --out reports/primary-plex.json
+```
+
+Emby example:
+
+```sh
+npm run audit -- emby-export \
+  --url http://primary-emby.example.local:8096 \
+  --token primary-emby-api-key \
+  --server-name primary \
+  --types movie,tv \
+  --out reports/primary-emby.json
+```
+
+Use `--library NAME` one or more times if you want to limit the export to specific libraries.
+
+### 2. Export The Secondary Server
+
+```sh
+npm run audit -- plex-export \
+  --url http://secondary-plex.example.local:32400 \
+  --token secondary-plex-token \
+  --server-name secondary \
+  --types movie,tv \
+  --out reports/secondary-plex.json
+```
+
+You can compare Plex-to-Plex, Plex-to-Emby, or Emby-to-Emby exports as long as each export was created by `plex-export` or `emby-export`.
+
+### 3. Compare Exports
+
+```sh
+npm run audit -- compare-exports \
+  --local reports/primary-plex.json \
+  --remote reports/secondary-plex.json \
+  --out-dir reports/overlap
+```
+
+The command writes:
+
+- `reports/overlap/overlap-candidates.md`
+- `reports/overlap/overlap-candidates.csv`
+- `reports/overlap/overlap-candidates.json`
+
+Matching uses available provider IDs first, then normalized title and year. For TV, the report separates full-season overlap from partial-season overlap and shows local-only seasons.
+
+### 4. Use Overlap As Review Context
+
+Pass the overlap JSON into later read-only review steps:
+
+```sh
+npm run audit -- tv-cleanup-options \
+  --ssh media-admin@example-host \
+  --root /path/to/media/tv \
+  --overlap-json reports/overlap/overlap-candidates.json \
+  --out-dir reports/tv-cleanup-options
+
+npm run audit -- movie-review \
+  --local reports/primary-plex.json \
+  --overlap-json reports/overlap/overlap-candidates.json \
+  --out-dir reports/movie-review
+```
+
+Remote overlap should reduce uncertainty, not replace local review. Keep the approval and deletion-plan sequence in place.
+
 ## TV Workflow
 
 ### 1. Generate Cleanup Options
